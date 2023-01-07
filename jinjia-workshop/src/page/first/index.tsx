@@ -3,6 +3,7 @@ import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/ico
 import type { MenuProps } from 'antd';
 import { Menu, Row, Col, Button } from 'antd';
 import titleImg from '../../assets/first/title.png'
+import right from '../../assets/first/right.png'
 import './index.less'
 const items: MenuProps['items'] = [
   {
@@ -42,7 +43,7 @@ const App: React.FC = () => {
   const demo = {
     textAlign: 'center'
   }
-  return <div className='container'>
+  return <div className='container' style={{backgroundColor:'white'}}>
     <div style={demo}>
       <Menu align="center" onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />;
     </div>
@@ -51,20 +52,20 @@ const App: React.FC = () => {
         <Col span={2}>
 
         </Col>
-        <Col span={8}>
-          <img src={titleImg}></img>
-          <p>
-            以立德树人为根本任务，以提高技术技能水平为目标，以技能竞赛和横向
-            项目为主要抓手，以具体工作任务为驱动，着重培养学员团队协作意识和
-            精益求精的工匠精神。
-          </p>
-          <Button type="primary" danger>了解更多工坊信息</Button>
-        </Col>
-        <Col span={2}>
+        <Col span={9}>
+          <div style={{width:'100%',height:'100%',display:'flex',flexDirection:'column',justifyContent:'center'}}>
+            <img style={{ width: '600px', height: '300px' }} src={titleImg}></img>
+            <p style={{width:'600px',fontSize:'20px'}}>
+              以立德树人为根本任务，以提高技术技能水平为目标，以技能竞赛和横向
+              项目为主要抓手，以具体工作任务为驱动，着重培养学员团队协作意识和
+              精益求精的工匠精神。
+            </p>
+            <Button type="primary" danger>了解更多工坊信息</Button>
+          </div>
 
         </Col>
-        <Col span={8}>
-
+        <Col span={11}>
+          <img style={{ width: '860px', height: '720px' }} src={right}></img>
         </Col>
         <Col span={2}>
 
