@@ -1,37 +1,8 @@
 .container {
   width: 100%;
   height: 100vh;
-  border: 1px solid black;
 }
 .secondIn {
   width: 90%;
   margin: 0 auto;
-}
-.swiper1 {
-  width: 100%;
-  height: 300px;
-}
-.swiper1 .swiper-slide {
-  height: 300px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  background: none;
-}
-.swiper2 {
-  width: 100%;
-  height: 120px;
-}
-.swiper2 .swiper-slide {
-  height: 120px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  background: none;
-}
-.swiper2 .swiper-slide img {
-  display: block;
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
 }

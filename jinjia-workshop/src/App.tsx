@@ -7,6 +7,7 @@ import Second from './page/second/index'
 import Third from './page/third'
 import Forth from './page/forth'
 import Fifth from './page/fifth'
+import Sixth from './page/sixth'
 const App: FC = () => (
   <div className="App">
     <First />
@@ -14,6 +15,7 @@ const App: FC = () => (
     <Third />
     <Forth />
     <Fifth />
+    <Sixth/>
   </div>
 );
 
