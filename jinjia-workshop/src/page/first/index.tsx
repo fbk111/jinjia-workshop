@@ -9,46 +9,50 @@ import icon from '../../assets/first/icon.png'
 // 2022-1-9基本完成，还需字体，分页器，axios，100vh
 const items: MenuProps['items'] = [
   {
-    label:<img style={{width:'100px',height:'30px'}} src={icon}/>,
-    key:''
+    label: <img style={{ width: '100px', height: '30px' }} src={icon} />,
+    key: ''
   },
   {
     label: '首页',
-    key: 'first',
+    key: 1,
     icon: <MailOutlined />,
   },
   {
     label: '荣誉获奖',
-    key: 'second',
+    key: 2,
     icon: <AppstoreOutlined />
   },
   {
     label: '项目作品',
-    key: 'third',
+    key: 3,
     icon: <SettingOutlined />,
   },
   {
     label: '师生风采',
-    key: 'forth',
+    key:4,
     icon: <SettingOutlined />,
   },
   {
     label: '校企合作',
-    key: 'fifth',
+    key: 5,
     icon: <SettingOutlined />,
   },
   {
-    label:<Button type="primary" danger>联系我们</Button>,
-    key: 'sixth'
+    label: <Button style={{ backgroundColor: '#bb021a' }} type="primary" danger>联系我们</Button>,
+    key: 6
   }
-  
+
 ];
 const { Text } = Typography;
 const App: React.FC = () => {
   const [current, setCurrent] = useState('mail');
 
   const onClick: MenuProps['onClick'] = (e: MouseEvent) => {
-    console.log('click ', e);
+    console.log('click ', e.key);
+    window.scrollTo({
+      top: e.key*1000,
+      behavior: "smooth"
+    });
     setCurrent(e.key);
   };
   const demo = {
@@ -72,7 +76,7 @@ const App: React.FC = () => {
                 精益求精的工匠精神。</Text>
             </div>
             <Divider />
-            <Button type="primary" danger>了解更多工坊信息</Button>
+            <Button style={{ backgroundColor: '#bb021a' }} type="primary" danger>了解更多工坊信息</Button>
           </div>
 
         </Col>

@@ -56,10 +56,11 @@ export default function App() {
         <Swiper
           spaceBetween={30}
           pagination={{
-            clickable: true,
+            el: '.swiper-pagination',
           }}
           modules={[Pagination]}
           style={{ width:'100%',height: '600px' }}
+          className='thirdSwiper1'
         >
           {
             imgList.map(item=>(
@@ -79,8 +80,8 @@ export default function App() {
                    <div style={{width:'100%',marginTop:'20px',marginBottom:'50px'}}>
                    <Text>{item.text}</Text>
                    </div>
-                    <Button type="primary" danger>{item.button1}</Button>
-                    <Button type="primary" danger>{item.button2}</Button>
+                    <Button style={{backgroundColor:'#bb021a'}} type="primary" danger>{item.button1}</Button>
+                    <Button style={{backgroundColor:'#bb021a'}} type="primary" danger>{item.button2}</Button>
                 </Col>
                 <Col className="gutter-row" span={3}>
   
@@ -89,6 +90,7 @@ export default function App() {
             </SwiperSlide>
             ))
           }
+                  <div className="swiper-pagination"></div>
         </Swiper>
       </div>
     </>

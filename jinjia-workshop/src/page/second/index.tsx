@@ -43,26 +43,27 @@ const imgList = [
     button: '国家级'
   }
 ]
-const pagination = {
-  clickable: true,
-  renderBullet: function (index, className) {
-    return '<span class="' + className + '">' + (index + 1) + "</span>";
-  },
-};
 
 const App: React.FC = () => (
   <div className='container' style={{ backgroundColor: 'white' }}>
     <div className='secondIn' >
+
       <div className='header' style={{ width: '100%', height: '170px', marginTop: '50px' }}>
-        <Title style={{margin:'0px',fontSize:'56px'}}>荣誉获奖证书</Title>
-        <Title style={{margin:'0px',color:'white',fontSize:'40px',textShadow:'1px 1px 1px black'}}>Honorary Award</Title>
+        <Title style={{ margin: '0px', fontSize: '56px' }}>荣誉获奖证书</Title>
+        <Title style={{ margin: '0px', color: 'white', fontSize: '40px', textShadow: '1px 1px 1px black' }}>Honorary Award</Title>
       </div>
       <Swiper
         slidesPerView={3}
         spaceBetween={40}
-        clas
-        pagination={pagination}
-        modules={[Pagination]}
+        pagination={{
+          el: '.swiper-pagination',
+        }}
+        Navigation={{
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+          disabledClass: 'disable'
+        }}
+        modules={[Pagination, Navigation]}
         className="mySwiper"
         style={{ width: '100%', height: '400px', marginBottom: '100px' }}
       >
@@ -78,12 +79,14 @@ const App: React.FC = () => (
                   {item.p}
                 </Text>
 
-                <Button type="primary" style={{ display: 'block', margin: '0 auto' }} danger>{item.button}</Button>
+                <Button type="primary" style={{ display: 'block', margin: '0 auto',backgroundColor:'#bb021a' }} danger>{item.button}</Button>
               </Card>
             </SwiperSlide>
           ))
         }
-
+        <div className="swiper-button-prev"></div>
+        <div className="swiper-button-next"></div>
+        <div className="swiper-pagination"></div>
       </Swiper>
       <Swiper
         slidesPerView={6}
@@ -106,7 +109,6 @@ const App: React.FC = () => (
 
       </Swiper>
     </div>
-    <FloatButton.BackTop />
 
 
   </div>

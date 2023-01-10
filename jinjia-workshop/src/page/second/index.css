@@ -6,3 +6,33 @@
   width: 90%;
   margin: 0 auto;
 }
+.mySwiper {
+  --swiper-pagination-color: #bb021a;
+  position: relative;
+}
+.swiper-pagination {
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  top: 95%;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  bottom: 0px;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  top: 100%;
+  background: #bb021a;
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
+}
+.swiper-button-prev {
+  left: 45%;
+}
+.swiper-button-next {
+  right: 45%;
+}

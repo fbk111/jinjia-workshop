@@ -61,6 +61,7 @@ export default function index() {
             }}
             modules={[Pagination]}
             style={{height:600}}
+            className='forthSwiper'
 
           >
             {
@@ -72,7 +73,7 @@ export default function index() {
                     style={{ width: '100%'}}
                     cover={<img  src={item.img} />}
                   >
-                    <Button style={{display:'block',margin:'0 auto'}} type="primary" danger>{item.name}</Button>
+                    <Button style={{display:'block',margin:'0 auto',backgroundColor:'#bb021a'}} type="primary" danger>{item.name}</Button>
                     <br/>
                     <Text style={{display:'block'}}>{item.description}</Text>
                   </Card>
