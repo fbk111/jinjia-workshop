@@ -1,7 +1,7 @@
 import React, { Component, useRef, useState,useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Row, Col, Typography, Button } from "antd";
+import { Row, Col, Typography, Button,Skeleton } from "antd";
 import first from '../../assets/third/first.png'
 import second from '../../assets/third/second.png'
 import third from '../../assets/third/thrid.png'
@@ -29,6 +29,7 @@ export default function App(props: object) {
       setImgList(res)
     })
   },[])
+  let loading=()=>imgList.length==0?true:false
   return (
     <>
       <div className="container">
@@ -36,6 +37,7 @@ export default function App(props: object) {
           <Title style={{ margin: '0px', fontSize: '56px' }}>项目作品</Title>
           <Title style={{ margin: '0px', color: 'white', fontSize: '40px', textShadow: '1px 1px 1px grey' }}>Project works</Title>
         </div>
+        <Skeleton loading={loading()} active round width>
         <Swiper
           spaceBetween={30}
           pagination={{
@@ -87,6 +89,7 @@ export default function App(props: object) {
             <img src={props.next} />
           </div>
         </Swiper>
+        </Skeleton>
       </div>
     </>
   );

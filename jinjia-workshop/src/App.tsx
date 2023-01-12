@@ -2,6 +2,7 @@ import React, { FC,useState } from 'react';
 import { Button, FloatButton } from 'antd';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination,Mousewheel } from "swiper";
+import { ArrowUpOutlined} from '@ant-design/icons';
 import 'antd/dist/reset.css';
 import './App.css';
 import First from './page/first/index'
@@ -18,12 +19,24 @@ const App: FC = () => {
   const [activeIndex,setActiveIndex]=useState('0')
  
   let swiperController;
-  const pageChange=(page:number)=>{
+  const pageChange=(page)=>{
    swiperController.slideTo(page,3000,false)
+  }
+  const isShowButton=()=>{
+    if(activeIndex==2||activeIndex==3||activeIndex==4||activeIndex==5){
+      return true
+    }else{
+      return false
+    }
+  }
+  const goTop=()=>{
+    console.log('in')
+document.body.scrollTop=0
+window.scrollTo()
   }
   return(
    <div className="App">
-    <FloatButton.BackTop style={{position:'fixed',zIndex:1000}} />
+    <Button type='primary' style={{display:isShowButton()==true?'block':'none'}} className='scrollButton' danger onClick={goTop}><ArrowUpOutlined /></Button>
     <Swiper
       direction={"vertical"}
       modules={[Pagination,Mousewheel]}

@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import './index.less'
-import { Card, Typography, Button,Divider  } from 'antd';
+import { Card, Typography, Button,Divider,Skeleton  } from 'antd';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from "swiper";
 import 'swiper/swiper-bundle.css';
@@ -20,6 +20,7 @@ export default function index(props:object) {
       setTeacherList(res)
     })
   },[])
+  let loading=()=>teacherList.length==0?true:false
   return (
     <div className='container'>
       <div className='forthIn'>
@@ -28,7 +29,8 @@ export default function index(props:object) {
         <Title style={{margin:'0px',color:'white',fontSize:'40px',textShadow:'1px 1px 1px grey'}}>Elegant demeanour</Title>
         </div>
         <div className='teacherList'>
-          <Swiper
+          <Skeleton loading={loading()} round active>
+                      <Swiper
             slidesPerView={4}
             spaceBetween={40}
             pagination={{
@@ -69,6 +71,8 @@ export default function index(props:object) {
             <img src={props.next} />
           </div>
           </Swiper>
+          </Skeleton>
+
         </div>
       </div>
     </div>

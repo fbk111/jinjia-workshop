@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const service=axios.create({
     baseURL:'https://jinjiawork.usemock.com/api',
-    timeout:1000
+    timeout:10000
 })
 service.interceptors.request.use((config)=>{
     return config
