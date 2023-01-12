@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
+import { AppstoreOutlined, NodeIndexOutlined, UserOutlined,MobileOutlined,RocketOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Menu, Row, Col, Button, Typography, Divider } from 'antd';
 import titleImg from '../../assets/first/title.png'
@@ -9,13 +9,13 @@ import icon from '../../assets/first/icon.png'
 // 2022-1-9基本完成，还需字体，分页器，axios，100vh
 const items: MenuProps['items'] = [
   {
-    label: <img style={{ width: '100px', height: '30px' }} src={icon} />,
-    key: ''
+    label: <img style={{ width: '100px', height: '30px'}} src={icon} />,
+    key: 0
   },
   {
     label: '首页',
     key: 1,
-    icon: <MailOutlined />,
+    icon: <NodeIndexOutlined />,
   },
   {
     label: '荣誉获奖',
@@ -25,17 +25,17 @@ const items: MenuProps['items'] = [
   {
     label: '项目作品',
     key: 3,
-    icon: <SettingOutlined />,
+    icon:<MobileOutlined />,
   },
   {
     label: '师生风采',
     key:4,
-    icon: <SettingOutlined />,
+    icon: <RocketOutlined />,
   },
   {
     label: '校企合作',
     key: 5,
-    icon: <SettingOutlined />,
+    icon: <UserOutlined />,
   },
   {
     label: <Button style={{ backgroundColor: '#bb021a' }} type="primary" danger>联系我们</Button>,
@@ -45,22 +45,20 @@ const items: MenuProps['items'] = [
 ];
 const { Text } = Typography;
 const App: React.FC = () => {
-  const [current, setCurrent] = useState('mail');
+  const [current, setCurrent] = useState('1');
 
   const onClick: MenuProps['onClick'] = (e: MouseEvent) => {
-    console.log('click ', e.key);
-    window.scrollTo({
-      top: e.key*1000,
-      behavior: "smooth"
-    });
+
     setCurrent(e.key);
   };
   const demo = {
-    textAlign: 'center'
+    width:'100%',
+    display:'flex',
+    justifyContent:'center'
   }
   return <div className='container' style={{ backgroundColor: 'white' }}>
 
-    <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />;
+    <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} style={demo} />;
 
     <div className='content'>
       <Row justify="center" align="top">
@@ -71,7 +69,7 @@ const App: React.FC = () => {
           <div style={{ width: '600px', marginTop: '100px' }}>
             <img style={{ width: '600px', height: '300px' }} src={titleImg}></img>
             <div>
-              <Text>以立德树人为根本任务，以提高技术技能水平为目标，以技能竞赛和横向
+              <Text style={{fontSize:'18px'}}>以立德树人为根本任务，以提高技术技能水平为目标，以技能竞赛和横向
                 项目为主要抓手，以具体工作任务为驱动，着重培养学员团队协作意识和
                 精益求精的工匠精神。</Text>
             </div>

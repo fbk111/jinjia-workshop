@@ -22,17 +22,28 @@
   bottom: 0px;
   width: 20px;
   height: 20px;
-  border-radius: 20px;
+  border-radius: 10px;
   top: 100%;
-  background: #bb021a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .swiper-button-prev::after,
 .swiper-button-next::after {
   display: none;
 }
+.swiper-button-prev img,
+.swiper-button-next img {
+  width: 20px;
+  height: 20px;
+}
 .swiper-button-prev {
   left: 45%;
+  box-shadow: 1px 1px 1px grey;
+  background-color: white;
 }
 .swiper-button-next {
   right: 45%;
+  box-shadow: 1px 1px 1px grey;
+  background-color: #bb021a;
 }

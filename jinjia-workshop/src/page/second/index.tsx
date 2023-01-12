@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Carousel, Card, FloatButton, Button, Typography } from 'antd';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from "swiper";
@@ -11,6 +11,7 @@ import certificate4 from '../../assets/seconds/certificate4.png'
 import certificate5 from '../../assets/seconds/certificate5.png'
 import certificate6 from '../../assets/seconds/certificate6.png'
 import award1 from '../../assets/seconds/award1.png'
+
 const contentStyle: React.CSSProperties = {
   height: '160px',
   color: '#fff',
@@ -21,7 +22,13 @@ const contentStyle: React.CSSProperties = {
 const { Meta } = Card;
 const { Title, Text } = Typography;
 const certificateList = [certificate1, certificate2, certificate3, certificate4, certificate5, certificate6]
-const imgList = [
+type img={
+  img:string,
+  p:string,
+  button:string
+
+}
+const imgList:img[] = [
   {
     img: '',
     p: '齐瓒获2020年中华人民共和国第一届职业技能大赛铜牌。',
@@ -44,7 +51,8 @@ const imgList = [
   }
 ]
 
-const App: React.FC = () => (
+const App: React.FC = (props) => (
+  
   <div className='container' style={{ backgroundColor: 'white' }}>
     <div className='secondIn' >
 
@@ -57,15 +65,16 @@ const App: React.FC = () => (
         spaceBetween={40}
         pagination={{
           el: '.swiper-pagination',
+          // dynamicBullets: true,
+          clickable :true,
         }}
         Navigation={{
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
-          disabledClass: 'disable'
         }}
         modules={[Pagination, Navigation]}
         className="mySwiper"
-        style={{ width: '100%', height: '400px', marginBottom: '100px' }}
+        style={{ width: '100%', height: '420px', marginBottom: '100px' }}
       >
         {
           imgList.map(item => (
@@ -79,13 +88,17 @@ const App: React.FC = () => (
                   {item.p}
                 </Text>
 
-                <Button type="primary" style={{ display: 'block', margin: '0 auto',backgroundColor:'#bb021a' }} danger>{item.button}</Button>
+                <Button type="primary" style={{ display: 'block', margin: '0 auto',marginTop:'10px',backgroundColor:'#bb021a' }} danger>{item.button}</Button>
               </Card>
             </SwiperSlide>
           ))
         }
-        <div className="swiper-button-prev"></div>
-        <div className="swiper-button-next"></div>
+        <div className="swiper-button-prev">
+         <img src={props.last}/>
+        </div>
+        <div className="swiper-button-next">
+          <img src={props.next}/>
+        </div>
         <div className="swiper-pagination"></div>
       </Swiper>
       <Swiper

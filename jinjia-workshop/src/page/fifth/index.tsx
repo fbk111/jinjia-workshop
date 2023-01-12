@@ -46,7 +46,7 @@ const App: React.FC = () => (
       <div className='fifthIn' style={{width:'90%',margin:'0 auto'}}>
         <div className='header' style={{margin:'50px 0 50px 0'}}>
         <Title style={{margin:'0px',fontSize:'56px'}}>校企合作</Title>
-        <Title style={{margin:'0px',color:'white',fontSize:'40px',textShadow:'1px 1px 1px black'}}>Cooperation</Title>
+        <Title style={{margin:'0px',color:'white',fontSize:'40px',textShadow:'1px 1px 1px grey'}}>Cooperation</Title>
         </div>
         <div className='school'>
           <Row gutter={16}>
@@ -54,7 +54,7 @@ const App: React.FC = () => (
               schoolList.map(item=>(
                 <Col span={8}>
                 <Card style={{ height: 230 }} bordered hoverable title={item.title} extra={<a href="#">More</a>}>
-                  {item.description}
+                 <Text> {item.description}</Text>
                 </Card>
               </Col>
               ))
@@ -63,7 +63,7 @@ const App: React.FC = () => (
         </div>
         <div className='header' style={{margin:'50px 0 50px 0'}}>
         <Title style={{margin:'0px',fontSize:'56px'}}>合作企业</Title>
-        <Title style={{margin:'0px',color:'white',fontSize:'40px',textShadow:'1px 1px 1px black'}}>Cooperative enterprises</Title>
+        <Title style={{margin:'0px',color:'white',fontSize:'40px',textShadow:'1px 1px 1px grey'}}>Cooperative enterprises</Title>
         </div>
         <div className='compony'>
           <Row gutter={[16, 24]}>
