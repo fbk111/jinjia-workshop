@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import { Carousel, Card, FloatButton, Button, Typography } from 'antd';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide, } from 'swiper/react';
 import { Pagination, Navigation } from "swiper";
 import 'swiper/swiper-bundle.css';
 import './index.less'

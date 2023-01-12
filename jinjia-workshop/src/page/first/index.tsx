@@ -10,43 +10,42 @@ import icon from '../../assets/first/icon.png'
 const items: MenuProps['items'] = [
   {
     label: <img style={{ width: '100px', height: '30px'}} src={icon} />,
-    key: 0
+    key: 6
   },
   {
     label: '首页',
-    key: 1,
+    key: 0,
     icon: <NodeIndexOutlined />,
   },
   {
     label: '荣誉获奖',
-    key: 2,
+    key: 1,
     icon: <AppstoreOutlined />
   },
   {
     label: '项目作品',
-    key: 3,
+    key: 2,
     icon:<MobileOutlined />,
   },
   {
     label: '师生风采',
-    key:4,
+    key:3,
     icon: <RocketOutlined />,
   },
   {
     label: '校企合作',
-    key: 5,
+    key: 4,
     icon: <UserOutlined />,
   },
   {
     label: <Button style={{ backgroundColor: '#bb021a' }} type="primary" danger>联系我们</Button>,
-    key: 6
+    key: 5
   }
 
 ];
 const { Text } = Typography;
-const App: React.FC = () => {
-  const [current, setCurrent] = useState('1');
-
+const App: React.FC = (props) => {
+  const [current, setCurrent] = useState('0');
   const onClick: MenuProps['onClick'] = (e: MouseEvent) => {
 
     setCurrent(e.key);
