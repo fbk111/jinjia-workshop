@@ -1,10 +1,11 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import './index.less'
 import { Card, Typography, Button,Divider  } from 'antd';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from "swiper";
 import 'swiper/swiper-bundle.css';
 import teacher1 from '../../assets/forth/teacher1.png'
+import {indexForth} from '../../request/all.js'
 const { Meta } = Card;
 const { Title,Text } = Typography;
 type img={
@@ -12,44 +13,13 @@ type img={
   name:string,
   description:string
 }
-const teacherList:img[] = [
-  { 
-    img:teacher1,
-    name: '祝文飞',
-    description: '天津市五一劳动奖章获得者。多年企业一线软件开发经验，专业方向：移动应用开发。指导学生多次获得国家级竞赛奖项。'
-  },
-  {
-    img:teacher1,
-    name: '祝文飞',
-    description: '天津市五一劳动奖章获得者。多年企业一线软件开发经验，专业方向：移动应用开发。指导学生多次获得国家级竞赛奖项。'
-  },
-  {
-    img:teacher1,
-    name: '祝文飞',
-    description: '天津市五一劳动奖章获得者。多年企业一线软件开发经验，专业方向：移动应用开发。指导学生多次获得国家级竞赛奖项。'
-  },
-  {
-    img:teacher1,
-    name: '祝文飞',
-    description: '天津市五一劳动奖章获得者。多年企业一线软件开发经验，专业方向：移动应用开发。指导学生多次获得国家级竞赛奖项。'
-  },
-  {
-    img:teacher1,
-    name: '祝文飞',
-    description: '天津市五一劳动奖章获得者。多年企业一线软件开发经验，专业方向：移动应用开发。指导学生多次获得国家级竞赛奖项。'
-  },
-  {
-    img:teacher1,
-    name: '祝文飞',
-    description: '天津市五一劳动奖章获得者。多年企业一线软件开发经验，专业方向：移动应用开发。指导学生多次获得国家级竞赛奖项。'
-  },
-  {
-    img:teacher1,
-    name: '祝文飞',
-    description: '天津市五一劳动奖章获得者。多年企业一线软件开发经验，专业方向：移动应用开发。指导学生多次获得国家级竞赛奖项。'
-  }
-]
 export default function index(props:object) {
+  const [teacherList,setTeacherList]=useState([])
+  useEffect(()=>{
+    indexForth().then(res=>{
+      setTeacherList(res)
+    })
+  },[])
   return (
     <div className='container'>
       <div className='forthIn'>
@@ -82,7 +52,7 @@ export default function index(props:object) {
                   bordered
                     hoverable
                     style={{ width: '100%'}}
-                    cover={<img  src={item.img} />}
+                    cover={<img  src={teacher1} />}
                   >
                     <Button style={{display:'block',margin:'0 auto',backgroundColor:'#bb021a'}} type="primary" danger>{item.name}</Button>
                     <br/>

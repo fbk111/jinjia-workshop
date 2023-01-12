@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Carousel, Card, FloatButton, Button, Typography } from 'antd';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from "swiper";
@@ -11,7 +11,7 @@ import certificate4 from '../../assets/seconds/certificate4.png'
 import certificate5 from '../../assets/seconds/certificate5.png'
 import certificate6 from '../../assets/seconds/certificate6.png'
 import award1 from '../../assets/seconds/award1.png'
-
+import {indexSecond} from '../../request/all.js'
 const contentStyle: React.CSSProperties = {
   height: '160px',
   color: '#fff',
@@ -26,34 +26,18 @@ type img={
   img:string,
   p:string,
   button:string
-
 }
-const imgList:img[] = [
-  {
-    img: '',
-    p: '齐瓒获2020年中华人民共和国第一届职业技能大赛铜牌。',
-    button: '国家级'
-  },
-  {
-    img: '',
-    p: '齐瓒获2020年中华人民共和国第一届职业技能大赛铜牌。',
-    button: '国家级'
-  },
-  {
-    img: '',
-    p: '齐瓒获2020年中华人民共和国第一届职业技能大赛铜牌。',
-    button: '国家级'
-  },
-  {
-    img: '',
-    p: '齐瓒获2020年中华人民共和国第一届职业技能大赛铜牌。',
-    button: '国家级'
-  }
-]
 
-const App: React.FC = (props) => (
-  
-  <div className='container' style={{ backgroundColor: 'white' }}>
+
+const App: React.FC = (props) => {  
+  const [imgList,setImgList]=useState([])
+  //相当于componentDidMount
+  useEffect(()=>{
+    indexSecond().then(res=>{
+      setImgList(res)
+    })
+  },[])
+ return <div className='container' style={{ backgroundColor: 'white' }}>
     <div className='secondIn' >
 
       <div className='header' style={{ width: '100%', height: '170px', marginTop: '50px' }}>
@@ -126,6 +110,6 @@ const App: React.FC = (props) => (
 
   </div>
 
-);
+      };
 
 export default App;

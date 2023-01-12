@@ -1,4 +1,4 @@
-import React, { Component, useRef, useState } from "react";
+import React, { Component, useRef, useState,useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Row, Col, Typography, Button } from "antd";
@@ -9,7 +9,7 @@ import forth from '../../assets/third/forth.png'
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-
+import {indexThird} from '../../request/all.js'
 import "./index.less";
 
 // import required modules
@@ -22,37 +22,13 @@ interface img{
   button1:string,
   button2:string
 }
-const imgList:img[] = [
-  {
-    img: first,
-    title: '快办一体机终端项目',
-    text: '该项目采用Android原生 + H5 移动混合开发技术，技术选型合理，可扩展性强。项目成果在行政案件快速办理（领域）进行了应用，有效简化了行政案件的办理流程，提高了办案人员工作效率，帮助客户创造经济效益近200万。    ',
-    button1: '横向课题',
-    button2: 'App开发'
-  },
-  {
-    img: second,
-    title: '快办一体机终端项目',
-    text: '该项目采用Android原生 + H5 移动混合开发技术，技术选型合理，可扩展性强。项目成果在行政案件快速办理（领域）进行了应用，有效简化了行政案件的办理流程，提高了办案人员工作效率，帮助客户创造经济效益近200万。    ',
-    button1: '横向课题',
-    button2: 'App开发'
-  },
-  {
-    img: third,
-    title: '快办一体机终端项目',
-    text: '该项目采用Android原生 + H5 移动混合开发技术，技术选型合理，可扩展性强。项目成果在行政案件快速办理（领域）进行了应用，有效简化了行政案件的办理流程，提高了办案人员工作效率，帮助客户创造经济效益近200万。    ',
-    button1: '横向课题',
-    button2: 'App开发'
-  },
-  {
-    img: forth,
-    title: '快办一体机终端项目',
-    text: '该项目采用Android原生 + H5 移动混合开发技术，技术选型合理，可扩展性强。项目成果在行政案件快速办理（领域）进行了应用，有效简化了行政案件的办理流程，提高了办案人员工作效率，帮助客户创造经济效益近200万。    ',
-    button1: '横向课题',
-    button2: 'App开发'
-  }
-]
 export default function App(props: object) {
+  const [imgList,setImgList]=useState([])
+  useEffect(()=>{
+    indexThird().then(res=>{
+      setImgList(res)
+    })
+  },[])
   return (
     <>
       <div className="container">
@@ -83,7 +59,7 @@ export default function App(props: object) {
 
                   </Col>
                   <Col className="gutter-row" span={12} >
-                    <img style={{ width: '100%' }} src={item.img} />
+                    <img style={{ width: '100%' }} src={first} />
                   </Col>
                   <Col className="gutter-row" span={1} >
 

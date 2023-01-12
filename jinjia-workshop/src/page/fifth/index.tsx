@@ -1,5 +1,6 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import { Card, Col, Row, Avatar,Typography } from 'antd';
+import {indexFifth} from '../../request/all.js'
 const { Meta } = Card;
 const gridStyle: React.CSSProperties = {
   width: '25%',
@@ -20,28 +21,18 @@ const schoolList=[
     description:'客户将软件项目整体交由工坊师生团队开发，工坊组建项目开发团队，独立完成项目开发，并保质如期交付。'
   }
 ]
-const componyList=[
-  {
-    name:'人人众包（天津）科技有限公司'
-  },
-  {
-    name:'人人众包（天津）科技有限公司'
-  },
-  {
-    name:'人人众包（天津）科技有限公司'
-  },
-  {
-    name:'人人众包（天津）科技有限公司'
-  },
-  {
-    name:'人人众包（天津）科技有限公司'
-  },
-  {
-    name:'人人众包（天津）科技有限公司'
-  }
-]
-const App: React.FC = () => (
-  <>
+
+const App: React.FC = () => {
+  const [componyList,setComponyList]=useState([])
+  const [schoolList,setSchoolList]=useState([])
+  useEffect(()=>{
+    indexFifth().then(res=>{
+      setComponyList(res.componyList)
+      setSchoolList(res.schoolList)
+
+    })
+  },[])
+  return <>
     <div className='container'>
       <div className='fifthIn' style={{width:'90%',margin:'0 auto'}}>
         <div className='header' style={{margin:'50px 0 50px 0'}}>
@@ -83,6 +74,6 @@ const App: React.FC = () => (
     </div>
 
   </>
-);
+};
 
 export default App;
