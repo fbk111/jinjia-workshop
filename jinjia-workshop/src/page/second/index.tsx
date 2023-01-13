@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import { Carousel, Card, FloatButton, Button, Typography,Skeleton  } from 'antd';
 import { Swiper, SwiperSlide, } from 'swiper/react';
-import { Pagination, Navigation } from "swiper";
+import { Pagination, Navigation,Autoplay } from "swiper";
 import 'swiper/swiper-bundle.css';
 import './index.less'
 import {indexSecond} from '../../request/all.js'
@@ -69,11 +69,13 @@ const App: React.FC = (props) => {
       <Swiper
         slidesPerView={6}
         spaceBetween={30}
-        pagination={{
-          clickable: true,
+        autoplay={{
+          delay: 2500,
+          stopOnLastSlide: true,
+          disableOnInteraction: true,
         }}
         Navigation={true}
-        modules={[Navigation]}
+        modules={[Navigation,Autoplay]}
         style={{ height: '180px' }}
 
       >
