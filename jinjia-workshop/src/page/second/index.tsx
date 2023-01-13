@@ -4,39 +4,17 @@ import { Swiper, SwiperSlide, } from 'swiper/react';
 import { Pagination, Navigation } from "swiper";
 import 'swiper/swiper-bundle.css';
 import './index.less'
-import certificate1 from '../../assets/seconds/certificate1.png'
-import certificate2 from '../../assets/seconds/certificate2.png'
-import certificate3 from '../../assets/seconds/certificate3.png'
-import certificate4 from '../../assets/seconds/certificate4.png'
-import certificate5 from '../../assets/seconds/certificate5.png'
-import certificate6 from '../../assets/seconds/certificate6.png'
-import award1 from '../../assets/seconds/award1.png'
 import {indexSecond} from '../../request/all.js'
-const contentStyle: React.CSSProperties = {
-  height: '160px',
-  color: '#fff',
-  lineHeight: '160px',
-  textAlign: 'center',
-  background: '#364d79',
-};
-const { Meta } = Card;
 const { Title, Text } = Typography;
-const certificateList = [certificate1, certificate2, certificate3, certificate4, certificate5, certificate6]
-type img={
-  img:string,
-  p:string,
-  button:string
-}
-
-
 const App: React.FC = (props) => {  
   const [imgList,setImgList]=useState([])
+  const [certificateList,setCertificateList]=useState([])
   let loading=()=>imgList.length==0?true:false
   //相当于componentDidMount
   useEffect(()=>{
     indexSecond().then(res=>{
-      console.log('second',res)
-      setImgList(res)
+      setImgList(res.studentAward)
+      setCertificateList(res.certificateList)
     })
   },[])
  return <div className='container' style={{ backgroundColor: 'white' }}>
@@ -64,13 +42,13 @@ const App: React.FC = (props) => {
       >
         {
           imgList.map(item => (
-            <SwiperSlide>
+            <SwiperSlide key={item.index}>
               <Card
                 bordered
                 hoverable
-                cover={<img style={{ width: '90%', borderRadius: '10px', height: '250px', display: 'block', margin: '10px auto' }} alt="example" src={award1} />}
+                cover={<img style={{ width: '90%', borderRadius: '10px', height: '250px', display: 'block', margin: '10px auto' }} alt="example" src={item.img} />}
               >
-                <Text>
+                <Text >
                   {item.p}
                 </Text>
 
@@ -101,8 +79,8 @@ const App: React.FC = (props) => {
       >
         {
           certificateList.map(item => (
-            <SwiperSlide style={{ display: 'flex', justifyContent: 'center' }}>
-              <img src={item} />
+            <SwiperSlide key={item.index} style={{ display: 'flex', justifyContent: 'center' }}>
+              <img src={item.img} />
             </SwiperSlide>
           ))
         }

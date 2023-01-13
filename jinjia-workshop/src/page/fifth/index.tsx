@@ -7,27 +7,12 @@ const gridStyle: React.CSSProperties = {
   textAlign: 'center',
 };
 const { Title, Text } = Typography
-const schoolList = [
-  {
-    title: '横向课题',
-    description: '客户将软件项目整体交由工坊师生团队开发，工坊组建项目开发团队，独立完成项目开发，并保质如期交付。'
-  },
-  {
-    title: '横向课题',
-    description: '客户将软件项目整体交由工坊师生团队开发，工坊组建项目开发团队，独立完成项目开发，并保质如期交付。'
-  },
-  {
-    title: '横向课题',
-    description: '客户将软件项目整体交由工坊师生团队开发，工坊组建项目开发团队，独立完成项目开发，并保质如期交付。'
-  }
-]
 
 const App: React.FC = () => {
   const [componyList, setComponyList] = useState([])
   const [schoolList, setSchoolList] = useState([])
   useEffect(() => {
     indexFifth().then(res => {
-      console.log('demo',res)
       setComponyList(res.componyList)
       setSchoolList(res.schoolList)
 
@@ -47,7 +32,7 @@ const App: React.FC = () => {
             <Row gutter={16}>
               {
                 schoolList.map(item => (
-                  <Col span={8}>
+                  <Col span={8} key={item.index}>
                     <Card style={{ height: 230 }} bordered hoverable title={item.title} extra={<a href="#">More</a>}>
                       <Text> {item.description}</Text>
                     </Card>
@@ -67,7 +52,7 @@ const App: React.FC = () => {
             <Row gutter={[16, 24]}>
               {
                 componyList.map(item => (
-                  <Col className="gutter-row" span={8}>
+                  <Col className="gutter-row" span={8} key={item.index}>
                     <Card bordered hoverable>
                       <Text>{item.name}</Text>
                     </Card>

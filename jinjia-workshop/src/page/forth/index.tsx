@@ -49,12 +49,12 @@ export default function index(props:object) {
           >
             {
               teacherList.map(item => (
-                <SwiperSlide style={{ background: 'none' }}>
+                <SwiperSlide key={item.index} style={{ background: 'none' }}>
                   <Card
                   bordered
                     hoverable
                     style={{ width: '100%'}}
-                    cover={<img  src={teacher1} />}
+                    cover={<img  src={item.img} />}
                   >
                     <Button style={{display:'block',margin:'0 auto',backgroundColor:'#bb021a'}} type="primary" danger>{item.name}</Button>
                     <br/>

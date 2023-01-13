@@ -3,10 +3,6 @@ import React, { Component, useRef, useState,useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Row, Col, Typography, Button,Skeleton } from "antd";
 import first from '../../assets/third/first.png'
-import second from '../../assets/third/second.png'
-import third from '../../assets/third/thrid.png'
-import forth from '../../assets/third/forth.png'
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import {indexThird} from '../../request/all.js'
@@ -55,13 +51,13 @@ export default function App(props: object) {
         >
           {
             imgList.map(item => (
-              <SwiperSlide >
+              <SwiperSlide key={item.index}>
                 <Row gutter={24}>
                   <Col className="gutter-row" span={1}>
 
                   </Col>
                   <Col className="gutter-row" span={12} >
-                    <img style={{ width: '100%' }} src={first} />
+                    <img style={{ width: '100%' }} src={item.img} />
                   </Col>
                   <Col className="gutter-row" span={1} >
 

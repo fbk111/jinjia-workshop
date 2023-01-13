@@ -18,9 +18,9 @@ import { SwiperEvents } from 'swiper/types';
 const App: FC = () => {
   const [activeIndex,setActiveIndex]=useState('0')
  
-  let swiperController;
+  const [swiperController,setSwiperController]=useState()
   const pageChange=(page)=>{
-   swiperController.slideTo(page,3000,false)
+   swiperController.slideTo(page,1000,false)
   }
   const isShowButton=()=>{
     if(activeIndex==2||activeIndex==3||activeIndex==4||activeIndex==5){
@@ -30,9 +30,7 @@ const App: FC = () => {
     }
   }
   const goTop=()=>{
-    console.log('in')
-document.body.scrollTop=0
-window.scrollTo()
+    swiperController.slideTo(0,3000,false)
   }
   return(
    <div className="App">
@@ -43,7 +41,7 @@ window.scrollTo()
       className="allSwiper"
       mousewheel={true}
       onSlideChange={(e:SwiperEvents) => setActiveIndex(e.activeIndex)}
-      onSwiper={(swiper) => swiperController=swiper}
+      onSwiper={(swiper) => {setSwiperController(swiper)}}
     >
       <SwiperSlide>
         <First changePage={pageChange} activeIndex={activeIndex}/>

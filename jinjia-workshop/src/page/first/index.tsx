@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AppstoreOutlined, NodeIndexOutlined, UserOutlined,MobileOutlined,RocketOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Menu, Row, Col, Button, Typography, Divider } from 'antd';
@@ -14,42 +14,45 @@ const items: MenuProps['items'] = [
   },
   {
     label: '首页',
-    key: 0,
+    key: '0',
     icon: <NodeIndexOutlined />,
   },
   {
     label: '荣誉获奖',
-    key: 1,
+    key: '1',
     icon: <AppstoreOutlined />
   },
   {
     label: '项目作品',
-    key: 2,
+    key: '2',
     icon:<MobileOutlined />,
   },
   {
     label: '师生风采',
-    key:3,
+    key:'3',
     icon: <RocketOutlined />,
   },
   {
     label: '校企合作',
-    key: 4,
+    key: '4',
     icon: <UserOutlined />,
   },
   {
     label: <Button style={{ backgroundColor: '#bb021a' }} type="primary" danger>联系我们</Button>,
-    key: 5
+    key: '5'
   }
 
 ];
 const { Text } = Typography;
 const App: React.FC = (props) => {
-  const [current, setCurrent] = useState('0');
+  const [current, setCurrent] = useState('0')
   const onClick: MenuProps['onClick'] = (e: MouseEvent) => {
-
+    props.changePage(e.key)
     setCurrent(e.key);
   };
+  useEffect(()=>{
+    setCurrent(props.activeIndex)
+  },[props.activeIndex])
   const demo = {
     width:'100%',
     display:'flex',
