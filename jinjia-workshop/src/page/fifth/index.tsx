@@ -21,7 +21,7 @@ const App: React.FC = () => {
   let loadingCompony=()=>componyList.length==0?true:false
   let loadingSchool=()=>schoolList.length==0?true:false
   return <>
-    <div className='container'>
+    <div>
       <div className='fifthIn' style={{ width: '90%', margin: '0 auto' }}>
         <div className='header' style={{ margin: '50px 0 50px 0' }}>
           <Title style={{ margin: '0px', fontSize: '56px' }}>校企合作</Title>

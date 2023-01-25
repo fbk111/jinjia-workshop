@@ -17,13 +17,13 @@ const App: React.FC = (props) => {
       setCertificateList(res.certificateList)
     })
   },[])
- return <div className='container' style={{ backgroundColor: 'white' }}>
+ return <div>
     <div className='secondIn' >
       <div className='header' style={{ width: '100%', height: '170px', marginTop: '50px' }}>
         <Title style={{ margin: '0px', fontSize: '56px' }}>荣誉获奖证书</Title>
         <Title style={{ margin: '0px', color: 'white', fontSize: '40px', textShadow: '1px 1px 1px black' }}>Honorary Award</Title>
       </div>
-      <Skeleton loading={loading()} active round>
+      <Skeleton paragraph={{ rows: 20 }} loading={loading()} active round>
       <Swiper
         slidesPerView={3}
         spaceBetween={40}

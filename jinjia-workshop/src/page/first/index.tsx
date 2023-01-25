@@ -58,20 +58,17 @@ const App: React.FC = (props) => {
     display:'flex',
     justifyContent:'center'
   }
-  return <div className='container' style={{ backgroundColor: 'white' }}>
+  return <div>
 
     <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} style={demo} />;
 
-    <div className='content'>
-      <Row justify="center" align="top">
-        <Col span={2}>
-
-        </Col>
-        <Col span={9}>
-          <div style={{ width: '600px', marginTop: '100px' }}>
-            <img style={{ width: '600px', height: '300px' }} src={titleImg}></img>
+    <div className='content' style={{marginTop:'100px'}}>
+      <Row justify="center" style={{width:'100%',height:'100%'}} align="center">
+        <Col lg={{ span: 9, offset: 1 }} xs={{span:20}}>
+          <div style={{ width: '95%',margin:'0 auto',marginTop:'100px' }}>
+            <img style={{ width: '95%', height: 'auto' }} src={titleImg}></img>
             <div>
-              <Text style={{fontSize:'18px'}}>以立德树人为根本任务，以提高技术技能水平为目标，以技能竞赛和横向
+              <Text style={{fontSize:'20px'}}>以立德树人为根本任务，以提高技术技能水平为目标，以技能竞赛和横向
                 项目为主要抓手，以具体工作任务为驱动，着重培养学员团队协作意识和
                 精益求精的工匠精神。</Text>
             </div>
@@ -80,11 +77,8 @@ const App: React.FC = (props) => {
           </div>
 
         </Col>
-        <Col span={11}>
-          <img style={{ width: '860px', height: '720px' }} src={right}></img>
-        </Col>
-        <Col span={2}>
-
+        <Col lg={{ span: 11 }} xs={{span:20}}>
+          <img style={{ width: '100%', height: 'auto' }} src={right}></img>
         </Col>
       </Row>
     </div>

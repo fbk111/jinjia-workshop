@@ -28,12 +28,12 @@ export default function App(props: object) {
   let loading=()=>imgList.length==0?true:false
   return (
     <>
-      <div className="container">
+      <div>
         <div className='header' style={{ width: '90%', height: '170px', margin: '0 auto', marginTop: '50px' }}>
           <Title style={{ margin: '0px', fontSize: '56px' }}>项目作品</Title>
           <Title style={{ margin: '0px', color: 'white', fontSize: '40px', textShadow: '1px 1px 1px grey' }}>Project works</Title>
         </div>
-        <Skeleton loading={loading()} active round width>
+        <Skeleton paragraph={{ rows: 20 }} style={{width:'90%',margin:'0 auto'}} loading={loading()} active round width>
         <Swiper
           spaceBetween={30}
           pagination={{

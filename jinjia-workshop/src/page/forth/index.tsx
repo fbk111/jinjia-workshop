@@ -22,14 +22,14 @@ export default function index(props:object) {
   },[])
   let loading=()=>teacherList.length==0?true:false
   return (
-    <div className='container'>
+    <div>
       <div className='forthIn'>
         <div className='header' style={{margin:'50px 0 50px 0'}}>
         <Title style={{margin:'0px',fontSize:'56px'}}>师生风采</Title>
         <Title style={{margin:'0px',color:'white',fontSize:'40px',textShadow:'1px 1px 1px grey'}}>Elegant demeanour</Title>
         </div>
         <div className='teacherList'>
-          <Skeleton loading={loading()} round active>
+          <Skeleton paragraph={{ rows: 20 }} loading={loading()} round active>
                       <Swiper
             slidesPerView={4}
             spaceBetween={40}

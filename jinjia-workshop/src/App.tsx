@@ -57,7 +57,7 @@ const App: FC = () => {
         <Forth last={last} next={next} />
       </SwiperSlide>
       <SwiperSlide>
-        <Fifth />
+        <Fifth style={{backgroundColor:'#F9CEFF'}}/>
       </SwiperSlide>
       <SwiperSlide>
         <Sixth next={next} last={last} />
