@@ -31,7 +31,7 @@ export default function index(props:object) {
         <div className='teacherList'>
           <Skeleton paragraph={{ rows: 20 }} loading={loading()} round active>
                       <Swiper
-            slidesPerView={4}
+            slidesPerView={1}
             spaceBetween={40}
             pagination={{
               el: '.swiper-pagination',

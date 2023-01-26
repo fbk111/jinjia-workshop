@@ -29,10 +29,10 @@ const App: React.FC = () => {
         </div>
         <Skeleton loading={loadingSchool()} active round>
           <div className='school'>
-            <Row gutter={16}>
+            <Row gutter={24}>
               {
                 schoolList.map(item => (
-                  <Col span={8} key={item.index}>
+                  <Col lg={{span:8}} xs={{span:24}} key={item.index}>
                     <Card style={{ height: 230 }} bordered hoverable title={item.title} extra={<a href="#">More</a>}>
                       <Text> {item.description}</Text>
                     </Card>
@@ -52,7 +52,7 @@ const App: React.FC = () => {
             <Row gutter={[16, 24]}>
               {
                 componyList.map(item => (
-                  <Col className="gutter-row" span={8} key={item.index}>
+                  <Col  className="gutter-row" lg={{span:8}} xs={{span:24}} key={item.index}>
                     <Card bordered hoverable>
                       <Text>{item.name}</Text>
                     </Card>

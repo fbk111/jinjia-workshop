@@ -46,23 +46,18 @@ export default function App(props: object) {
             prevEl: '.swiper-button-prev',
           }}
           modules={[Pagination, Navigation]}
-          style={{ width: '100%', height: '600px' }}
+          style={{ width: '100%', height: '700px' }}
           className='thirdSwiper1'
         >
           {
             imgList.map(item => (
               <SwiperSlide key={item.index}>
                 <Row gutter={24}>
-                  <Col className="gutter-row" span={1}>
 
+                  <Col className="gutter-row" lg={{ span: 12, offset: 1 }} xs={{ span: 24 }}>
+                    <img style={{ width: '100%', }} src={item.img} />
                   </Col>
-                  <Col className="gutter-row" span={12} >
-                    <img style={{ width: '100%' }} src={item.img} />
-                  </Col>
-                  <Col className="gutter-row" span={1} >
-
-                  </Col>
-                  <Col className="gutter-row" span={7}>
+                  <Col className="gutter-row" lg={{ span: 7, offset: 1 }} xs={{ span: 20, offset: 1 }}>
                     <Title level={3}>{item.title}</Title>
                     <div style={{ width: '100%', marginTop: '20px', marginBottom: '50px' }}>
                       <Text style={{ fontSize: '20px' }}>{item.text}</Text>
@@ -70,7 +65,7 @@ export default function App(props: object) {
                     <Button style={{ backgroundColor: '#bb021a', display: 'inline-block', marginRight: '10px' }} type="primary" danger>{item.button1}</Button>
                     <Button style={{ backgroundColor: '#bb021a' }} type="primary" danger>{item.button2}</Button>
                   </Col>
-                  <Col className="gutter-row" span={3}>
+                  <Col className="gutter-row" lg={{ span: 3}} xs={{ span: 0}}>
 
                   </Col>
                 </Row>

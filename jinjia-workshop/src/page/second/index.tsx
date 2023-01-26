@@ -38,7 +38,7 @@ const App: React.FC = (props) => {
         }}
         modules={[Pagination, Navigation]}
         className="mySwiper"
-        style={{ width: '100%', height: '420px', marginBottom: '100px',display:imgList.length==0?'none':'block' }}
+        style={{ width: '100%',height:'420px',display:imgList.length==0?'none':'block' }}
       >
         {
           imgList.map(item => (
@@ -82,7 +82,10 @@ const App: React.FC = (props) => {
         {
           certificateList.map(item => (
             <SwiperSlide key={item.index} style={{ display: 'flex', justifyContent: 'center' }}>
-              <img src={item.img} />
+              <Card  bordered hoverable>
+                <img src={item.img} /> 
+              </Card>
+             
             </SwiperSlide>
           ))
         }

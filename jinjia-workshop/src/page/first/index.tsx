@@ -62,10 +62,10 @@ const App: React.FC = (props) => {
 
     <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} style={demo} />;
 
-    <div className='content' style={{marginTop:'100px'}}>
+    <div className='content' style={{width:'100%',height:'100vh',display:'flex',flexDirection:'column',justifyContent:'center'}}>
       <Row justify="center" style={{width:'100%',height:'100%'}} align="center">
         <Col lg={{ span: 9, offset: 1 }} xs={{span:20}}>
-          <div style={{ width: '95%',margin:'0 auto',marginTop:'100px' }}>
+          <div style={{ width: '95%'}}>
             <img style={{ width: '95%', height: 'auto' }} src={titleImg}></img>
             <div>
               <Text style={{fontSize:'20px'}}>以立德树人为根本任务，以提高技术技能水平为目标，以技能竞赛和横向
