@@ -1,17 +1,16 @@
-
 .secondIn {
   width: 90%;
   margin: 0 auto;
 }
 .mySwiper {
-  --swiper-pagination-color: #bb021a; 
+  --swiper-pagination-color: #bb021a;
   position: relative;
 }
-.swiper-pagination{
-width: 100%;
-height: 20px;
-position: absolute;
-top: 95%;
+.swiper-pagination {
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  top: 95%;
 }
 .swiper-button-prev,
 .swiper-button-next {
@@ -27,7 +26,7 @@ top: 95%;
   &::after {
     display: none;
   }
-  img{
+  img {
     width: 20px;
     height: 20px;
   }
@@ -36,11 +35,76 @@ top: 95%;
   left: 45%;
   // background: #FFFFFF;
   box-shadow: 1px 1px 1px grey;
- background-color: white;
+  background-color: white;
 }
-.swiper-button-next{
+.swiper-button-next {
   right: 45%;
-    // background: #bb021a;
-    box-shadow: 1px 1px 1px grey;
-     background-color: #bb021a;
+  // background: #bb021a;
+  box-shadow: 1px 1px 1px grey;
+  background-color: #bb021a;
+}
+// @media screen and (max-width: 600px) {
+//   /*0~320*/
+//   .header{
+//     font-size: .5rem;
+//   }
+// }
+// @media screen and (min-width: 600px) and (max-width: 900px) {
+//   /*321~768*/
+//   .header{
+//     font-size: .5rem;
+//   }
+// }
+// @media screen and (min-width: 900px) and (max-width: 1200px) {
+//   /*376~425*/
+//   .header{
+//     font-size: 1rem;
+//   }
+// }
+// @media screen and (min-width: 1200px) and (max-width: 1800px) {
+//   /*426~768*/
+//   .header{
+//     font-size: 1rem;
+//   }
+// }
+.header {
+  font-size: 1rem;
+  width: 100%;
+  max-height: 10rem;
+  margin-top: 50px;
+}
+@media screen and (max-width: 1024px) {
+  .header {
+    font-size: 1rem;
+  }
+}
+/* ipad */
+@media screen and (max-width: 768px) {
+  .header {
+    font-size: 0.5rem;
+  }
+}
+/* iphone6 7 8 plus */
+@media screen and (max-width: 414px) {
+  .header {
+    font-size: 0.5rem;
+  }
+}
+/* iphoneX */
+@media screen and (max-width: 375px) and (-webkit-device-pixel-ratio: 3) {
+  .header {
+    font-size: 0.5rem;
+  }
+}
+/* iphone6 7 8 */
+@media screen and (max-width: 375px) and (-webkit-device-pixel-ratio: 2) {
+  .header {
+    font-size: 0.5rem;
+  }
+}
+/* iphone5 */
+@media screen and (max-width: 320px) {
+  .header {
+    font-size: 0.5rem;
+  }
 }

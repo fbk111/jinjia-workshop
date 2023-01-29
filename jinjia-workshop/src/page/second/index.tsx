@@ -19,14 +19,32 @@ const App: React.FC = (props) => {
   },[])
  return <div>
     <div className='secondIn' >
-      <div className='header' style={{ width: '100%', height: '170px', marginTop: '50px' }}>
-        <Title style={{ margin: '0px', fontSize: '56px' }}>荣誉获奖证书</Title>
+      <div className='header'>
+        <Title style={{ margin: '0px', fontSize: '18px' }}>荣誉获奖证书</Title>
         <Title style={{ margin: '0px', color: 'white', fontSize: '40px', textShadow: '1px 1px 1px black' }}>Honorary Award</Title>
       </div>
       <Skeleton paragraph={{ rows: 20 }} loading={loading()} active round>
       <Swiper
         slidesPerView={3}
         spaceBetween={40}
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        }}
         pagination={{
           el: '.swiper-pagination',
           // dynamicBullets: true,
@@ -69,6 +87,24 @@ const App: React.FC = (props) => {
       <Swiper
         slidesPerView={6}
         spaceBetween={30}
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 6,
+            spaceBetween: 30,
+          },
+        }}
         autoplay={{
           delay: 2500,
           stopOnLastSlide: true,
