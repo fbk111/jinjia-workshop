@@ -1,0 +1,54 @@
+.fifthContent {
+  width: 100%;
+  height: 100%;
+}
+.fifthContent .fifthIn {
+  width: 90%;
+  margin: 0 auto;
+}
+.fifthContent .swiperForth {
+  width: 100%;
+  height: 370px;
+}
+.fifthContent .card {
+  height: 100%;
+}
+.fifthContent .card2 {
+  height: 100px;
+}
+.fifthContent .content {
+  font-size: 32px;
+  line-height: 48px;
+  color: #454545;
+}
+.fifthContent .swiperForth2 {
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 993px) {
+  .fifthContent {
+    width: 100%;
+    height: 100%;
+  }
+  .fifthContent .content {
+    font-size: 0.15rem;
+  }
+}
+@media screen and (max-width: 993px) and screen and (max-width: 993px) {
+  .header {
+    width: 100%;
+  }
+  .header1 {
+    padding: 0px;
+    margin: 0px;
+    font-size: 0.1rem;
+  }
+  .header2 {
+    padding: 0px;
+    margin: 0px;
+    font-size: 56px;
+    color: white;
+    font-size: 40px;
+    text-shadow: 1px 1px 1px black;
+  }
+}

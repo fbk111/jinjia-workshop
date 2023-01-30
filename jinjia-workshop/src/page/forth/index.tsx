@@ -22,12 +22,12 @@ export default function index(props: object) {
   }, [])
   let loading = () => teacherList.length == 0 ? true : false
   return (
-    <div>
-      <div className='forthIn'>
-        <div className='header' style={{ margin: '50px 0 50px 0' }}>
-          <Title style={{ margin: '0px', fontSize: '18px' }}>师生风采</Title>
-          <Title style={{ margin: '0px', color: 'white', fontSize: '40px', textShadow: '1px 1px 1px grey' }}>Elegant demeanour</Title>
+    <div className='forthContent'>
+              <div className='header'>
+          <p className='header1'>荣誉获奖证书</p>
+          <p className='header2'>Honorary Award</p>
         </div>
+      <div className='forthIn'>
         <div className='teacherList'>
           <Skeleton paragraph={{ rows: 20 }} loading={loading()} round active>
             <Swiper
@@ -61,7 +61,6 @@ export default function index(props: object) {
                 prevEl: '.swiper-button-prev',
               }}
               modules={[Pagination, Navigation]}
-              style={{ height: 600 }}
               className='forthSwiper'
 
             >
@@ -76,7 +75,7 @@ export default function index(props: object) {
                     >
                       <Button style={{ display: 'block', margin: '0 auto', backgroundColor: '#bb021a' }} type="primary" danger>{item.name}</Button>
                       <br />
-                      <Text style={{ display: 'block' }}>{item.description}</Text>
+                      <p className='content' style={{ display: 'block' }}>{item.description}</p>
                     </Card>
                   </SwiperSlide>
                 ))

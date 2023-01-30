@@ -5,6 +5,7 @@ import { Pagination,Mousewheel } from "swiper";
 import { ArrowUpOutlined} from '@ant-design/icons';
 import 'antd/dist/reset.css';
 import './App.css';
+import './utils/font.js'
 import First from './page/first/index'
 import Second from './page/second/index'
 import Third from './page/third'

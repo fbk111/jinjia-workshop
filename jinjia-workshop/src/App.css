@@ -1,12 +1,12 @@
-*{
+* {
     padding: 0px;
     border: 0px;
 }
-.allSwiper{
+.allSwiper {
     width: 100%;
     height: 100vh;
 }
-.scrollButton{
+.scrollButton {
     display: block;
     position: fixed;
     z-index: 10000;
@@ -14,4 +14,42 @@
     height: 70px;
     bottom: 200px;
     right: 20px;
+}
+.header {
+    margin-top: 56px;
+    width: 100%;
+    height: 170px;
+}
+
+.header1 {
+    padding: 0px;
+    margin: 0px;
+    font-size: 72px;
+}
+.header2 {
+    padding: 0px;
+    margin: 0px;
+    font-size: 56px;
+    color: white;
+    font-size: 40px;
+    text-shadow: 1px 1px 1px black;
+}
+@media screen and(max-width:993px) {
+    .header {
+        width: 100%;
+    }
+    
+    .header1 {
+        padding: 0px;
+        margin: 0px;
+        font-size: .1rem;
+    }
+    .header2 {
+        padding: 0px;
+        margin: 0px;
+        font-size: 56px;
+        color: white;
+        font-size: 40px;
+        text-shadow: 1px 1px 1px black;
+    }
 }

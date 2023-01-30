@@ -1,73 +1,68 @@
-import React, { Component, useRef, useState,useEffect } from "react";
+import React, { Component, useRef, useState, useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Row, Col, Typography, Button,Skeleton } from "antd";
+import { Row, Col, Typography, Button, Skeleton } from "antd";
 import first from '../../assets/third/first.png'
 import "swiper/css";
 import "swiper/css/pagination";
-import {indexThird} from '../../request/all.js'
+import { indexThird } from '../../request/all.js'
 import "./index.less";
 
 // import required modules
 import { Navigation, Pagination } from "swiper";
 const { Title, Text } = Typography;
-interface img{
-  img:string,
-  title:string,
-  text:string,
-  button1:string,
-  button2:string
+interface img {
+  img: string,
+  title: string,
+  text: string,
+  button1: string,
+  button2: string
 }
 export default function App(props: object) {
-  const [imgList,setImgList]=useState([])
-  useEffect(()=>{
-    indexThird().then(res=>{
+  const [imgList, setImgList] = useState([])
+  useEffect(() => {
+    indexThird().then(res => {
       setImgList(res)
     })
-  },[])
-  let loading=()=>imgList.length==0?true:false
+  }, [])
+  let loading = () => imgList.length == 0 ? true : false
   return (
-    <>
-      <div>
-        <div className='header' style={{ width: '90%', height: '170px', margin: '0 auto', marginTop: '50px' }}>
-          <Title style={{ margin: '0px', fontSize: '18px' }}>项目作品</Title>
-          <Title style={{ margin: '0px', color: 'white', fontSize: '40px', textShadow: '1px 1px 1px grey' }}>Project works</Title>
-        </div>
-        <Skeleton paragraph={{ rows: 20 }} style={{width:'90%',margin:'0 auto'}} loading={loading()} active round width>
+    <div className="thirdContent">
+      <div className='header'>
+        <p className='header1'>荣誉获奖证书</p>
+        <p className='header2'>Honorary Award</p>
+      </div>
+      <Skeleton paragraph={{ rows: 20 }} style={{ width: '90%', margin: '0 auto' }} loading={loading()} active round width>
         <Swiper
           spaceBetween={30}
           pagination={{
             el: '.swiper-pagination',
             // dynamicBullets: true,
-            clickable :true,
+            clickable: true,
           }}
           Navigation={{
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
           }}
           modules={[Pagination, Navigation]}
-          style={{ width: '100%', height: '700px' }}
           className='thirdSwiper1'
         >
           {
             imgList.map(item => (
               <SwiperSlide key={item.index}>
-                <Row gutter={24}>
-
-                  <Col className="gutter-row" lg={{ span: 12, offset: 1 }} xs={{ span: 24 }}>
-                    <img style={{ width: '100%', }} src={item.img} />
+                <Row align="top">
+                  <Col span={1}></Col>
+                  <Col className="gutter-row" lg={{ span: 12 }} xs={{ span: 24 }}>
+                    <img className="img" src={item.img} />
                   </Col>
-                  <Col className="gutter-row" lg={{ span: 7, offset: 1 }} xs={{ span: 20, offset: 1 }}>
-                    <Title level={3}>{item.title}</Title>
-                    <div style={{ width: '100%', marginTop: '20px', marginBottom: '50px' }}>
-                      <Text style={{ fontSize: '20px' }}>{item.text}</Text>
-                    </div>
-                    <Button style={{ backgroundColor: '#bb021a', display: 'inline-block', marginRight: '10px' }} type="primary" danger>{item.button1}</Button>
-                    <Button style={{ backgroundColor: '#bb021a' }} type="primary" danger>{item.button2}</Button>
+                  <Col span={1}></Col>
+                  <Col className="gutter-row" lg={{ span: 8 }} xs={{ span: 20 }}>
+                    <p className="title">{item.title}</p>
+                    <p className="content">{item.text}</p>
+                    <Button className='button'>{item.button2}</Button>
+                    <Button className='button'>{item.button1}</Button>
                   </Col>
-                  <Col className="gutter-row" lg={{ span: 3}} xs={{ span: 0}}>
-
-                  </Col>
+                  <Col span={2}></Col>
                 </Row>
               </SwiperSlide>
             ))
@@ -80,8 +75,8 @@ export default function App(props: object) {
             <img src={props.next} />
           </div>
         </Swiper>
-        </Skeleton>
-      </div>
-    </>
+      </Skeleton>
+    </div>
+
   );
 }
