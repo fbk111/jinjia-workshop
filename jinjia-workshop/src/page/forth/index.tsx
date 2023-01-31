@@ -23,11 +23,11 @@ export default function index(props: object) {
   let loading = () => teacherList.length == 0 ? true : false
   return (
     <div className='forthContent'>
-              <div className='header'>
-          <p className='header1'>荣誉获奖证书</p>
-          <p className='header2'>Honorary Award</p>
-        </div>
       <div className='forthIn'>
+      <div className='header'>
+        <p className='header1'>荣誉获奖证书</p>
+        <p className='header2'>Honorary Award</p>
+      </div>
         <div className='teacherList'>
           <Skeleton paragraph={{ rows: 20 }} loading={loading()} round active>
             <Swiper
@@ -71,7 +71,7 @@ export default function index(props: object) {
                       bordered
                       hoverable
                       style={{ width: '100%' }}
-                      cover={<img src={item.img} />}
+                      cover={<img src={item.img} className='img' />}
                     >
                       <Button style={{ display: 'block', margin: '0 auto', backgroundColor: '#bb021a' }} type="primary" danger>{item.name}</Button>
                       <br />

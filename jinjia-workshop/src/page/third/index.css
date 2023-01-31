@@ -2,6 +2,10 @@
   width: 100%;
   height: 100%;
 }
+.thirdContent .thirdIn {
+  width: 90%;
+  margin: 0 auto;
+}
 .thirdContent .thirdSwiper1 {
   --swiper-pagination-color: #bb021a;
   position: relative;
@@ -20,7 +24,7 @@
   line-height: 52px;
 }
 .thirdContent .button {
-  background-color: #BB021A;
+  background-color: #bb021a;
   color: white;
   width: 110px;
   height: 42px;
@@ -59,4 +63,45 @@
   right: 46%;
   box-shadow: 1px 1px 1px grey;
   background-color: #bb021a;
+}
+@media screen and (max-width: 576px) {
+  .thirdContent {
+    width: 100%;
+    height: 100%;
+  }
+  .thirdContent .thirdIn {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 {
+    --swiper-pagination-color: #bb021a;
+    position: relative;
+    height: 750px;
+    margin-top: 36px;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .img {
+    width: 100%;
+    height: auto;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .contentAll {
+    width: 100%;
+    height: 400px;
+    margin-top: 50px;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .contentAll .title {
+    text-align: center;
+    font-size: 0.3rem;
+    width: 100%;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .contentAll .content {
+    line-height: 36px;
+    font-size: 0.1rem;
+    color: #707070;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .contentAll .button {
+    background-color: #bb021a;
+    color: white;
+    width: 110px;
+    height: 42px;
+  }
 }

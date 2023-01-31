@@ -28,6 +28,7 @@ export default function App(props: object) {
   let loading = () => imgList.length == 0 ? true : false
   return (
     <div className="thirdContent">
+      <div className="thirdIn">
       <div className='header'>
         <p className='header1'>荣誉获奖证书</p>
         <p className='header2'>Honorary Award</p>
@@ -51,18 +52,17 @@ export default function App(props: object) {
             imgList.map(item => (
               <SwiperSlide key={item.index}>
                 <Row align="top">
-                  <Col span={1}></Col>
-                  <Col className="gutter-row" lg={{ span: 12 }} xs={{ span: 24 }}>
+                  <Col className="gutter-row" lg={{ span: 13 }} xs={{ span: 24 }}>
                     <img className="img" src={item.img} />
                   </Col>
-                  <Col span={1}></Col>
-                  <Col className="gutter-row" lg={{ span: 8 }} xs={{ span: 20 }}>
+                  <Col lg={{ span: 1 }}></Col>
+                  <Col className="contentAll" lg={{ span: 9 }} xs={{ span: 24 }}>
                     <p className="title">{item.title}</p>
                     <p className="content">{item.text}</p>
                     <Button className='button'>{item.button2}</Button>
                     <Button className='button'>{item.button1}</Button>
                   </Col>
-                  <Col span={2}></Col>
+                  <Col lg={{ span: 1}}></Col>
                 </Row>
               </SwiperSlide>
             ))
@@ -76,6 +76,7 @@ export default function App(props: object) {
           </div>
         </Swiper>
       </Skeleton>
+    </div>
     </div>
 
   );

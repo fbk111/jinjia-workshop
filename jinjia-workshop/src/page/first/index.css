@@ -2,27 +2,60 @@
   width: 100%;
   height: 100%;
 }
+.firstContent .firstIn {
+  width: 100%;
+  height: 100%;
+}
 .firstContent .text {
   font-size: 20px;
+  line-height: 36px;
 }
 .firstContent .firstRow {
   width: 100%;
   height: 100%;
 }
 .firstContent .imgOne {
-  width: 720px;
-  height: 365px;
+  width: 100%;
+  height: auto;
 }
 .firstContent .button {
   width: 200px;
   height: 40px;
 }
 .firstContent .imgTwo {
-  width: 860px;
-  height: 720px;
+  width: 100%;
+  height: auto;
 }
-@media screen and (max-width: 993px) {
-  #firstContent .text {
+@media screen and (max-width: 576px) {
+  .firstContent {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+  .firstContent .firstIn {
+    width: 90%;
+    margin: 0 auto;
+    height: 100%;
+  }
+  .firstContent .firstIn .firstCol1 {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+  }
+  .firstContent .firstIn .secondCol2 {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+  }
+  .firstContent .firstIn .text {
     font-size: 0.1rem;
+  }
+  .firstContent .firstIn .imgOne {
+    max-width: 90%;
+    max-height: 200px;
+  }
+  .firstContent .firstIn .imgTwo {
+    max-width: 90%;
+    max-height: 340px;
   }
 }

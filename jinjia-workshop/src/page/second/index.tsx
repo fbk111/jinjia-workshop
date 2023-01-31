@@ -47,12 +47,10 @@ const App: React.FC = (props) => {
           }}
           pagination={{
             el: '.swiper-pagination',
+            dynamicBullets: true,
             clickable: true,
           }}
-          Navigation={{
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          }}
+          Navigation={true}
           modules={[Pagination, Navigation]}
           className="mySwiperSecond"
           style={{display: imgList.length == 0 ? 'none' : 'block' }}
@@ -63,7 +61,7 @@ const App: React.FC = (props) => {
                 <Card
                   bordered
                   hoverable
-                  cover={<img style={{ width: '90%', borderRadius: '10px', height: '250px', display: 'block', margin: '10px auto' }} alt="example" src={item.img} />}
+                  cover={<img className='award' src={item.img} />}
                 >
                   <p className='cardText'>
                     {item.p}
@@ -74,12 +72,13 @@ const App: React.FC = (props) => {
               </SwiperSlide>
             ))
           }
-          <div className="swiper-button-prev">
+          {/* <div className="swiper-button-prev">
             <img src={props.last} />
           </div>
           <div className="swiper-button-next">
             <img src={props.next} />
           </div>
+          <div className="swiper-pagination"></div> */}
           <div className="swiper-pagination"></div>
         </Swiper>
       </Skeleton>
