@@ -24,10 +24,10 @@ export default function index(props: object) {
   return (
     <div className='forthContent'>
       <div className='forthIn'>
-      <div className='header'>
-        <p className='header1'>荣誉获奖证书</p>
-        <p className='header2'>Honorary Award</p>
-      </div>
+        <div className='header'>
+          <p className='header1'>荣誉获奖证书</p>
+          <p className='header2'>Honorary Award</p>
+        </div>
         <div className='teacherList'>
           <Skeleton paragraph={{ rows: 20 }} loading={loading()} round active>
             <Swiper
@@ -52,13 +52,13 @@ export default function index(props: object) {
                 },
               }}
               pagination={{
-                el: '.swiper-pagination',
-                // dynamicBullets: true,
+                dynamicBullets: true,
                 clickable: true,
               }}
-              Navigation={{
+              navigation={{
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
+                disabledClass: 'disable'
               }}
               modules={[Pagination, Navigation]}
               className='forthSwiper'
@@ -80,7 +80,6 @@ export default function index(props: object) {
                   </SwiperSlide>
                 ))
               }
-              <div className="swiper-pagination"></div>
               <div className="swiper-button-prev">
                 <img src={props.last} />
               </div>

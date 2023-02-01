@@ -3,6 +3,7 @@ import { Card, Typography, Skeleton } from 'antd';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Grid } from "swiper";
 import { indexFifth } from '../../request/all.js'
+import champion from '../../assets/champion.png'
 import './index.less'
 import "swiper/css";
 import "swiper/css/grid";
@@ -64,7 +65,7 @@ const App: React.FC = () => {
               {
                 schoolList.map(item => (
                   <SwiperSlide>
-                    <Card className='card' bordered hoverable title={item.title} extra={<a href="#">More</a>}>
+                    <Card className='card' bordered hoverable title={item.title} extra={<img src={champion} className='champion'></img>}>
                       <p className='content'> {item.description}</p>
                     </Card>
                   </SwiperSlide>
@@ -83,9 +84,6 @@ const App: React.FC = () => {
           <Swiper
             slidesPerView={3}
             spaceBetween={30}
-            pagination={{
-              clickable: true,
-            }}
             breakpoints={{
               0: {
                 slidesPerView: 1,
@@ -104,7 +102,6 @@ const App: React.FC = () => {
                 spaceBetween: 30,
               },
             }}
-            modules={[Pagination]}
             className="swiperForth2"
           >
             {
@@ -122,9 +119,6 @@ const App: React.FC = () => {
           <Swiper
             slidesPerView={3}
             spaceBetween={30}
-            pagination={{
-              clickable: true,
-            }}
             breakpoints={{
               0: {
                 slidesPerView: 1,
@@ -143,7 +137,6 @@ const App: React.FC = () => {
                 spaceBetween: 30,
               },
             }}
-            modules={[Pagination]}
             className="swiperForth2"
           >
             {

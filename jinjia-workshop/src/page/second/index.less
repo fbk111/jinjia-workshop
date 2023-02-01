@@ -1,6 +1,7 @@
 .secondContent{
   width: 100%;
   height: 100%;
+  background-color: #ffffb2;
 }
 .secondIn {
   width: 90%;
@@ -11,6 +12,32 @@
     --swiper-pagination-color: #bb021a;
     position: relative;
     margin-top: 36px;
+    .swiper-button-prev,.swiper-button-next{
+      img{
+        width: 20px;
+        height: 20px;
+      }
+      position: absolute;
+      top: 100%;
+      height: 20px;
+      width: 20px;
+      background: #bb021a;
+      border-radius: 5px;
+      &::after{
+        display: none;
+      }
+      &.disable{
+        background: white;
+      }
+    }
+    .swiper-button-prev{
+      left: 45%;
+    }
+    .swiper-button-next{
+      right: 45%;
+    }
+    .secondCard{
+      height: 90%;
     .cardText{
       font-size: 20px;
     }
@@ -18,7 +45,6 @@
       width: 92px;
       height: 32px;
       font-size: 20px;
-      line-height: 32px;
     }
     .award{
       width: 90%;
@@ -27,6 +53,7 @@
       display: block;
       margin: 10px auto;
     }
+  }
   }
   .mySwiperSecond2{
     margin-top: 70px;
@@ -38,38 +65,7 @@
     height: 100%;
   }
 }
-// .swiper-pagination {
-//   width: 100%;
-//   height: 20px;
-// }
-// .swiper-button-prev,
-// .swiper-button-next {
-//   position: absolute;
-//   width: 20px;
-//   height: 20px;
-//   border-radius: 10px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   &::after {
-//     display: none;
-//   }
-//   img {
-//     width: 20px;
-//     height: 20px;
-//   }
-// }
-// .swiper-button-prev {
-//   left: 45%;
-//   // background: #FFFFFF;
-//   box-shadow: 1px 1px 1px grey;
-//   background-color: white;
-// }
-// .swiper-button-next {
-//   right: 45%;
-//   box-shadow: 1px 1px 1px grey;
-//   background-color: #bb021a;
-// }
+
 @media screen and (max-width:576px) {
   .secondIn {
     width: 90%;
@@ -80,6 +76,35 @@
       --swiper-pagination-color: #bb021a;
       position: relative;
       margin-top: 36px;
+      .swiper-button-prev,.swiper-button-next{
+        img{
+          width: 20px;
+          height: 20px;
+        }
+        position: absolute;
+        top: 100%;
+        height: 20px;
+        width: 20px;
+        background: #bb021a;
+        border-radius: 5px;
+        &::after{
+          display: none;
+        }
+        &.disable{
+          background: white;
+        }
+      }
+      .swiper-button-prev{
+        left: 30%;
+      }
+      .swiper-button-next{
+        right: 30%;
+      }
+      .secondCard{
+        box-shadow:
+        inset 0 -3em 3em rgba(0,0,0,0.1),
+              0 0  0 2px rgb(255,255,255),
+              0.3em 0.3em 1em rgba(0,0,0,0.3);
       .cardText{
         font-size: .1rem;
       }
@@ -87,7 +112,6 @@
         width: .8rem;
         height: 32px;
         font-size: .1rem;
-        line-height: 10px;
       }
       .award{
         width: 90%;
@@ -96,6 +120,7 @@
         display: block;
         margin: 10px auto;
       }
+    }
     }
     .mySwiperSecond2{
       margin-top: 40px;

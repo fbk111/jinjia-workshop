@@ -1,6 +1,9 @@
 .firstContent {
   width: 100%;
   height: 100%;
+  background-image: url(../../assets/demo.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 .firstContent .firstIn {
   width: 100%;

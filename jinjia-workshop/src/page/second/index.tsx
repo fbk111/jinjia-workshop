@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Carousel, Card, FloatButton, Button, Typography, Skeleton } from 'antd';
+import { Card, Button, Typography, Skeleton } from 'antd';
 import { Swiper, SwiperSlide, } from 'swiper/react';
 import { Pagination, Navigation, Autoplay } from "swiper";
 import 'swiper/swiper-bundle.css';
@@ -46,19 +46,23 @@ const App: React.FC = (props) => {
             },
           }}
           pagination={{
-            el: '.swiper-pagination',
             dynamicBullets: true,
             clickable: true,
           }}
-          Navigation={true}
+          navigation={{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            disabledClass: 'disable'
+          }}
           modules={[Pagination, Navigation]}
           className="mySwiperSecond"
-          style={{display: imgList.length == 0 ? 'none' : 'block' }}
+          style={{ display: imgList.length == 0 ? 'none' : 'block' }}
         >
           {
             imgList.map(item => (
               <SwiperSlide key={item.index}>
                 <Card
+                  className='secondCard'
                   bordered
                   hoverable
                   cover={<img className='award' src={item.img} />}
@@ -72,14 +76,12 @@ const App: React.FC = (props) => {
               </SwiperSlide>
             ))
           }
-          {/* <div className="swiper-button-prev">
-            <img src={props.last} />
-          </div>
-          <div className="swiper-button-next">
-            <img src={props.next} />
-          </div>
-          <div className="swiper-pagination"></div> */}
-          <div className="swiper-pagination"></div>
+        <div className="swiper-button-prev">
+        <img src={props.last} />
+        </div>
+        <div className="swiper-button-next">
+        <img src={props.next} />
+        </div>
         </Swiper>
       </Skeleton>
       <Swiper
@@ -124,7 +126,6 @@ const App: React.FC = (props) => {
             </SwiperSlide>
           ))
         }
-
       </Swiper>
     </div>
 

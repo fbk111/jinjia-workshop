@@ -1,6 +1,7 @@
 .forthContent{
   width: 100%;
   height: 100%;
+  background-color: #FBFBF7;
   .forthIn{
     width: 90%;
     margin: 0 auto;
@@ -9,6 +10,30 @@
       width: 100%;
       height: 700px;
       --swiper-pagination-color: #bb021a; 
+      .swiper-button-prev,.swiper-button-next{
+        img{
+          width: 20px;
+          height: 20px;
+        }
+        position: absolute;
+        top: 100%;
+        height: 20px;
+        width: 20px;
+        background: #bb021a;
+        border-radius: 5px;
+        &::after{
+          display: none;
+        }
+        &.disable{
+          background: white;
+        }
+      }
+      .swiper-button-prev{
+        left: 45%;
+      }
+      .swiper-button-next{
+        right: 45%;
+      }
       .content{
         font-size: 20px;
         line-height: 28px;
@@ -28,6 +53,30 @@
         width: 100%;
         height: 700px;
         --swiper-pagination-color: #bb021a;
+        .swiper-button-prev,.swiper-button-next{
+          img{
+            width: 20px;
+            height: 20px;
+          }
+          position: absolute;
+          top: 100%;
+          height: 20px;
+          width: 20px;
+          background: #bb021a;
+          border-radius: 5px;
+          &::after{
+            display: none;
+          }
+          &.disable{
+            background: white;
+          }
+        }
+        .swiper-button-prev{
+          left: 30%;
+        }
+        .swiper-button-next{
+          right: 30%;
+        }
         .img{
           width: 100%;
           height: auto;
