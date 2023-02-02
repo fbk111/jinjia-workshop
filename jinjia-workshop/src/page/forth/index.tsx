@@ -25,8 +25,8 @@ export default function index(props: object) {
     <div className='forthContent'>
       <div className='forthIn'>
         <div className='header'>
-          <p className='header1'>荣誉获奖证书</p>
-          <p className='header2'>Honorary Award</p>
+          <p className='header1'>师生风采</p>
+          <p className='header2'>Elegant demeanour</p>
         </div>
         <div className='teacherList'>
           <Skeleton paragraph={{ rows: 20 }} loading={loading()} round active>
@@ -47,6 +47,14 @@ export default function index(props: object) {
                   spaceBetween: 30,
                 },
                 1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 30,
+                },
+                1200: {
+                  slidesPerView: 3,
+                  spaceBetween: 30,
+                },
+                1400: {
                   slidesPerView: 4,
                   spaceBetween: 30,
                 },

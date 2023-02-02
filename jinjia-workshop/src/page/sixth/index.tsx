@@ -7,8 +7,8 @@ export default function index(props: object) {
     <div className='sixContent'>
       <div className='sixIn'>
         <div className='header'>
-          <p className='header1'>荣誉获奖证书</p>
-          <p className='header2'>Honorary Award</p>
+          <p className='header1'>联系我们</p>
+          <p className='header2'>Contact us</p>
         </div>
       </div>
 

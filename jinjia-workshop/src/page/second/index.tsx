@@ -21,7 +21,7 @@ const App: React.FC = (props) => {
     <div className='secondIn' >
       <div className='header'>
         <p className='header1'>荣誉获奖证书</p>
-        <p className='header2'>Honorary Award</p>
+        <p className='header2'>Honorary Award</p> 
       </div>
       <Skeleton paragraph={{ rows: 20 }} loading={loading()} active round>
         <Swiper
@@ -32,15 +32,23 @@ const App: React.FC = (props) => {
               slidesPerView: 1,
               spaceBetween: 20,
             },
-            640: {
-              slidesPerView: 1,
+            576: {
+              slidesPerView: 2,
               spaceBetween: 20,
             },
             768: {
               slidesPerView: 2,
               spaceBetween: 30,
             },
-            1024: {
+            992: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            1200: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            1400: {
               slidesPerView: 3,
               spaceBetween: 30,
             },
@@ -89,6 +97,10 @@ const App: React.FC = (props) => {
         spaceBetween={30}
         breakpoints={{
           0: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          375: {
             slidesPerView: 1,
             spaceBetween: 20,
           },

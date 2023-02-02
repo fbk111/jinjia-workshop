@@ -30,13 +30,13 @@ export default function App(props: object) {
     <div className="thirdContent">
       <div className="thirdIn">
         <div className='header'>
-          <p className='header1'>荣誉获奖证书</p>
-          <p className='header2'>Honorary Award</p>
+          <p className='header1'>项目作品</p>
+          <p className='header2'>Project works</p>
         </div>
         <Skeleton paragraph={{ rows: 20 }} style={{ width: '90%', margin: '0 auto' }} loading={loading()} active round width>
           <Swiper
             spaceBetween={30}
-            pagination={{
+            pagination={{ 
               dynamicBullets: true,
               clickable: true,
             }}

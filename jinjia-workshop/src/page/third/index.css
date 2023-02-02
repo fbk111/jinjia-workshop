@@ -59,6 +59,156 @@
   width: 110px;
   height: 42px;
 }
+@media screen and (max-width: 1400px) {
+  .thirdContent {
+    width: 100%;
+    height: 100%;
+  }
+  .thirdContent .thirdIn {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 {
+    --swiper-pagination-color: #bb021a;
+    position: relative;
+    height: 550px;
+    margin-top: 100px;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .swiper-button-prev,
+  .thirdContent .thirdIn .thirdSwiper1 .swiper-button-next {
+    position: absolute;
+    top: 100%;
+    height: 20px;
+    width: 20px;
+    background: #bb021a;
+    border-radius: 5px;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .swiper-button-prev img,
+  .thirdContent .thirdIn .thirdSwiper1 .swiper-button-next img {
+    width: 20px;
+    height: 20px;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .swiper-button-prev::after,
+  .thirdContent .thirdIn .thirdSwiper1 .swiper-button-next::after {
+    display: none;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .swiper-button-prev.disable,
+  .thirdContent .thirdIn .thirdSwiper1 .swiper-button-next.disable {
+    background: white;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .swiper-button-prev {
+    left: 30%;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .swiper-button-next {
+    right: 30%;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .img {
+    width: 100%;
+    height: auto;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .contentAll {
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .contentAll .title {
+    text-align: center;
+    font-size: 50px;
+    width: 100%;
+    height: 30px;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .contentAll .content {
+    line-height: 36px;
+    font-size: 20px;
+    color: #707070;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .contentAll .buttonList {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .contentAll .buttonList .button {
+    background-color: #bb021a;
+    color: white;
+    width: 110px;
+    height: 42px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .thirdContent {
+    width: 100%;
+    height: 100%;
+  }
+  .thirdContent .thirdIn {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 {
+    --swiper-pagination-color: #bb021a;
+    position: relative;
+    height: 500px;
+    margin-top: 100px;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .swiper-button-prev,
+  .thirdContent .thirdIn .thirdSwiper1 .swiper-button-next {
+    position: absolute;
+    top: 100%;
+    height: 20px;
+    width: 20px;
+    background: #bb021a;
+    border-radius: 5px;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .swiper-button-prev img,
+  .thirdContent .thirdIn .thirdSwiper1 .swiper-button-next img {
+    width: 20px;
+    height: 20px;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .swiper-button-prev::after,
+  .thirdContent .thirdIn .thirdSwiper1 .swiper-button-next::after {
+    display: none;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .swiper-button-prev.disable,
+  .thirdContent .thirdIn .thirdSwiper1 .swiper-button-next.disable {
+    background: white;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .swiper-button-prev {
+    left: 30%;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .swiper-button-next {
+    right: 30%;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .img {
+    width: 100%;
+    height: auto;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .contentAll {
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .contentAll .title {
+    text-align: center;
+    font-size: 30px;
+    width: 100%;
+    height: 30px;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .contentAll .content {
+    line-height: 36px;
+    font-size: 20px;
+    color: #707070;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .contentAll .buttonList {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .thirdContent .thirdIn .thirdSwiper1 .contentAll .buttonList .button {
+    background-color: #bb021a;
+    color: white;
+    width: 110px;
+    height: 42px;
+  }
+}
 @media screen and (max-width: 900px) {
   .thirdContent {
     width: 100%;
@@ -71,8 +221,8 @@
   .thirdContent .thirdIn .thirdSwiper1 {
     --swiper-pagination-color: #bb021a;
     position: relative;
-    height: 730px;
-    margin-top: 36px;
+    height: 800px;
+    margin-top: 26px;
   }
   .thirdContent .thirdIn .thirdSwiper1 .swiper-button-prev,
   .thirdContent .thirdIn .thirdSwiper1 .swiper-button-next {
@@ -146,8 +296,8 @@
   .thirdContent .thirdIn .thirdSwiper1 {
     --swiper-pagination-color: #bb021a;
     position: relative;
-    height: 700px;
-    margin-top: 36px;
+    height: 650px;
+    margin-top: 50px;
   }
   .thirdContent .thirdIn .thirdSwiper1 .swiper-button-prev,
   .thirdContent .thirdIn .thirdSwiper1 .swiper-button-next {
@@ -188,12 +338,12 @@
   }
   .thirdContent .thirdIn .thirdSwiper1 .contentAll .title {
     text-align: center;
-    font-size: 0.3rem;
+    font-size: 30px;
     width: 100%;
   }
   .thirdContent .thirdIn .thirdSwiper1 .contentAll .content {
     line-height: 36px;
-    font-size: 0.1rem;
+    font-size: 15px;
     color: #707070;
   }
   .thirdContent .thirdIn .thirdSwiper1 .contentAll .buttonList {

@@ -29,8 +29,8 @@ const App: React.FC = () => {
   return <div className='fifthContent'>
     <div className='fifthIn'>
       <div className='header'>
-        <p className='header1'>荣誉获奖证书</p>
-        <p className='header2'>Honorary Award</p>
+        <p className='header1'>校企合作</p>
+        <p className='header2'>Cooperation</p>
       </div>
       <div>
         <Skeleton loading={loadingSchool()} active round>
@@ -77,8 +77,8 @@ const App: React.FC = () => {
         </Skeleton>
 
         <div className='header'>
-          <p className='header1'>荣誉获奖证书</p>
-          <p className='header2'>Honorary Award</p>
+          <p className='header1'>合作企业</p>
+          <p className='header2'>Cooperative enterprises</p>
         </div>
         <Skeleton loading={loadingCompony()} active round>
           <Swiper
