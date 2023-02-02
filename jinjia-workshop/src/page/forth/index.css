@@ -45,6 +45,58 @@
   font-size: 20px;
   line-height: 28px;
 }
+@media screen and (max-width: 900px) {
+  .forthContent {
+    width: 100%;
+    height: 100%;
+  }
+  .forthContent .forthIn {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .forthContent .forthIn .forthSwiper {
+    margin-top: 36px;
+    width: 100%;
+    height: 700px;
+    --swiper-pagination-color: #bb021a;
+  }
+  .forthContent .forthIn .forthSwiper .swiper-button-prev,
+  .forthContent .forthIn .forthSwiper .swiper-button-next {
+    position: absolute;
+    top: 100%;
+    height: 20px;
+    width: 20px;
+    background: #bb021a;
+    border-radius: 5px;
+  }
+  .forthContent .forthIn .forthSwiper .swiper-button-prev img,
+  .forthContent .forthIn .forthSwiper .swiper-button-next img {
+    width: 20px;
+    height: 20px;
+  }
+  .forthContent .forthIn .forthSwiper .swiper-button-prev::after,
+  .forthContent .forthIn .forthSwiper .swiper-button-next::after {
+    display: none;
+  }
+  .forthContent .forthIn .forthSwiper .swiper-button-prev.disable,
+  .forthContent .forthIn .forthSwiper .swiper-button-next.disable {
+    background: white;
+  }
+  .forthContent .forthIn .forthSwiper .swiper-button-prev {
+    left: 30%;
+  }
+  .forthContent .forthIn .forthSwiper .swiper-button-next {
+    right: 30%;
+  }
+  .forthContent .forthIn .forthSwiper .img {
+    width: 100%;
+    height: auto;
+  }
+  .forthContent .forthIn .forthSwiper .content {
+    font-size: 0.1rem;
+    line-height: 36px;
+  }
+}
 @media screen and (max-width: 576px) {
   .forthContent {
     width: 100%;

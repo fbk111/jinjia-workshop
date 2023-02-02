@@ -35,6 +35,39 @@
   width: 100%;
   height: 100%;
 }
+@media screen and (max-width: 900px) {
+  .fifthContent {
+    width: 100%;
+    height: 100%;
+  }
+  .fifthContent .fifthIn {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .fifthContent .fifthIn .swiperForth {
+    margin-top: 36px;
+    width: 100%;
+    height: 370px;
+  }
+  .fifthContent .fifthIn .swiperForth .card {
+    width: 100%;
+    height: 300px;
+  }
+  .fifthContent .fifthIn .swiperForth2 {
+    margin-top: 36px;
+    width: 100%;
+    height: 100%;
+  }
+  .fifthContent .fifthIn .swiperForth2 .card2 {
+    height: 80px;
+    text-align: center;
+  }
+  .fifthContent .fifthIn .content {
+    font-size: 20px;
+    line-height: 36px;
+    color: #454545;
+  }
+}
 @media screen and (max-width: 576px) {
   .fifthContent {
     width: 100%;
