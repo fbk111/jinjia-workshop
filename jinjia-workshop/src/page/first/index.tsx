@@ -6,6 +6,7 @@ import titleImg from '../../assets/first/title.png'
 import right from '../../assets/first/right.png'
 import './index.less'
 import icon from '../../assets/first/icon.png'
+import DemoButton from '../../component/3Dbutton/App.jsx'
 // 2022-1-9基本完成，还需字体，分页器，axios，100vh
 const items: MenuProps['items'] = [
   {
@@ -69,7 +70,7 @@ const App: React.FC = (props) => {
             项目为主要抓手，以具体工作任务为驱动，着重培养学员团队协作意识和
             精益求精的工匠精神。
           </p>
-          <Button style={{ backgroundColor: '#bb021a' }} className='button' type="primary" danger>了解更多工坊信息</Button>
+          <DemoButton/>
         </Col>
         <Col span={1}></Col>
         <Col className='secondCol2' lg={{ span: 11 }} xs={{ span: 24 }}>

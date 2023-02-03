@@ -41,27 +41,27 @@ const App: FC = () => {
       modules={[Pagination,Mousewheel]}
       className="allSwiper"
       mousewheel={true}
-      onSlideChange={(e:SwiperEvents) => setActiveIndex(e.activeIndex)}
+      onSlideChange={(e:SwiperEvents) =>{setActiveIndex(e.activeIndex)}}
       onSwiper={(swiper) => {setSwiperController(swiper)}}
     >
       <SwiperSlide>
         <First changePage={pageChange} activeIndex={activeIndex}/>
       </SwiperSlide>
       <SwiperSlide>
-        <Second last={last} next={next} />
+        <Second last={last} next={next} pageNumber={activeIndex}/>
       </SwiperSlide>
 
       <SwiperSlide>
-        <Third last={last} next={next} />
+        <Third last={last} next={next} pageNumber={activeIndex}/>
       </SwiperSlide>
       <SwiperSlide>
-        <Forth last={last} next={next} />
+        <Forth last={last} next={next} pageNumber={activeIndex}/>
       </SwiperSlide>
       <SwiperSlide>
-        <Fifth style={{backgroundColor:'#F9CEFF'}}/>
+        <Fifth pageNumber={activeIndex}/>
       </SwiperSlide>
       <SwiperSlide>
-        <Sixth next={next} last={last} />
+        <Sixth next={next} last={last} pageNumber={activeIndex}/>
       </SwiperSlide>
     </Swiper>
   </div>

@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, useInView } from "framer-motion";
 import { Card, Button, Typography, Skeleton } from 'antd';
 import { Swiper, SwiperSlide, } from 'swiper/react';
 import { Pagination, Navigation, Autoplay } from "swiper";
@@ -9,6 +10,7 @@ const { Title, Text } = Typography;
 const App: React.FC = (props) => {
   const [imgList, setImgList] = useState([])
   const [certificateList, setCertificateList] = useState([])
+  const [secondmove, setSecondMove] = useState(false)
   let loading = () => imgList.length == 0 ? true : false
   //相当于componentDidMount
   useEffect(() => {
@@ -17,14 +19,22 @@ const App: React.FC = (props) => {
       setCertificateList(res.certificateList)
     })
   }, [])
+
   return <div className='secondContent'>
     <div className='secondIn' >
-      <div className='header'>
-        <p className='header1'>荣誉获奖证书</p>
-        <p className='header2'>Honorary Award</p> 
+      <div className='header'
+        style={{
+          transform: props.pageNumber == 1 ? "none" : "translateX(500px)",
+          opacity: props.pageNumber == 1 ? 1 : 0,
+          transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
+        }}
+      >
+        <p className='header1' >荣誉获奖证书</p>
+        <p className='header2' >Honorary Award</p>
       </div>
       <Skeleton paragraph={{ rows: 20 }} loading={loading()} active round>
         <Swiper
+
           slidesPerView={3}
           spaceBetween={40}
           breakpoints={{
@@ -67,30 +77,43 @@ const App: React.FC = (props) => {
           style={{ display: imgList.length == 0 ? 'none' : 'block' }}
         >
           {
-            imgList.map(item => (
-              <SwiperSlide key={item.index}>
+            imgList.map((item, index) => (
+              <SwiperSlide
+                style={{
+                  transform: props.pageNumber == 1 ? "none" : `translateX(${500 - index * 100}px)`,
+                  opacity: props.pageNumber == 1 ? 1 : 0,
+                  transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
+                }}>
                 <Card
                   className='secondCard'
                   bordered
                   hoverable
                   cover={<img className='award' src={item.img} />}
                 >
-                  <p className='cardText'>
-                    {item.p}
-                  </p>
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
 
-                  <Button className='button' type="primary" style={{ display: 'block', margin: '0 auto', marginTop: '10px', backgroundColor: '#bb021a' }} danger>{item.button}</Button>
+                    <p className='cardText'>
+                      {item.p}
+                    </p>
+
+                    <Button onClick={() => setSecondMove(!secondmove)} className='button' type="primary" style={{ display: 'block', margin: '0 auto', marginTop: '10px', backgroundColor: '#bb021a' }} danger>{item.button}</Button>
+                  </motion.div>
+
                 </Card>
               </SwiperSlide>
             ))
           }
-        <div className="swiper-button-prev">
-        <img src={props.last} />
-        </div>
-        <div className="swiper-button-next">
-        <img src={props.next} />
-        </div>
+          <div className="swiper-button-prev">
+            <img src={props.last} />
+          </div>
+          <div className="swiper-button-next">
+            <img src={props.next} />
+          </div>
         </Swiper>
+
       </Skeleton>
       <Swiper
         slidesPerView={6}
@@ -133,10 +156,22 @@ const App: React.FC = (props) => {
 
       >
         {
-          certificateList.map(item => (
-            <SwiperSlide key={item.index} style={{ display: 'flex', justifyContent: 'center' }}>
+          certificateList.map((item,index) => (
+            <SwiperSlide
+              key={item.index}
+              style={{
+                display: 'flex', justifyContent: 'center',
+                transform: props.pageNumber == 1 ? "none" : `translateX(${-(500 - index * 100)}px)`,
+                opacity: props.pageNumber == 1 ? 1 : 0,
+                transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
+              }}>
               <Card bordered hoverable>
-                <img src={item.img} />
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  <img src={item.img} />
+                </motion.div>
               </Card>
 
             </SwiperSlide>

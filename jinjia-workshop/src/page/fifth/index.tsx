@@ -1,20 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Card, Typography, Skeleton } from 'antd';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Grid } from "swiper";
 import { indexFifth } from '../../request/all.js'
+import { useInView, motion } from "framer-motion";
 import champion from '../../assets/champion.png'
 import './index.less'
 import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/pagination";
-const gridStyle: React.CSSProperties = {
-  width: '25%',
-  textAlign: 'center',
-};
-const { Title, Text } = Typography
-
-const App: React.FC = () => {
+const App: React.FC = (props:Object) => {
   const [componyList, setComponyList] = useState([])
   const [schoolList, setSchoolList] = useState([])
   useEffect(() => {
@@ -28,9 +23,15 @@ const App: React.FC = () => {
   let loadingSchool = () => schoolList.length == 0 ? true : false
   return <div className='fifthContent'>
     <div className='fifthIn'>
-      <div className='header'>
-        <p className='header1'>校企合作</p>
-        <p className='header2'>Cooperation</p>
+      <div className='header'
+        style={{
+          transform: props.pageNumber==4 ? "none" : "translateX(500px)",
+          opacity: props.pageNumber==4 ? 1 : 0,
+          transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
+        }}>
+
+        <p className='header1' key="b">校企合作</p>
+        <p className='header2' key="c">Cooperation</p>
       </div>
       <div>
         <Skeleton loading={loadingSchool()} active round>
@@ -63,12 +64,25 @@ const App: React.FC = () => {
               className="swiperForth"
             >
               {
-                schoolList.map(item => (
-                  <SwiperSlide>
+
+                schoolList.map((item, index) => (
+
+                  <SwiperSlide
+                    style={{
+                      transform: props.pageNumber==4 ? "none" : `translateX(${500 - index * 100}px)`,
+                      opacity: props.pageNumber==4 ? 1 : 0,
+                      transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
+                    }}>
                     <Card className='card' bordered hoverable title={item.title} extra={<img src={champion} className='champion'></img>}>
-                      <p className='content'> {item.description}</p>
+                      <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                      >
+                        <p className='content'> {item.description}</p>
+                      </motion.div>
                     </Card>
                   </SwiperSlide>
+
                 ))
               }
 
@@ -76,9 +90,14 @@ const App: React.FC = () => {
           </div>
         </Skeleton>
 
-        <div className='header'>
+        <div className='header'
+          style={{
+            transform: props.pageNumber==4 ? "none" : "translateX(-200px)",
+            opacity: props.pageNumber==4 ? 1 : 0,
+            transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
+          }}>
           <p className='header1'>合作企业</p>
-          <p className='header2'>Cooperative enterprises</p>
+          <p className='header2'>enterprises</p>
         </div>
         <Skeleton loading={loadingCompony()} active round>
           <Swiper
@@ -105,11 +124,21 @@ const App: React.FC = () => {
             className="swiperForth2"
           >
             {
-              componyList.map(item => (
-                <SwiperSlide>
-                  <Card className='card2' bordered hoverable>
-                    <p className='content'>{item.name}</p>
-                  </Card>
+              componyList.map((item, index) => (
+                <SwiperSlide
+                  style={{
+                    transform: props.pageNumber==4 ? "none" : `translateY(100px)`,
+                    opacity: props.pageNumber==4 ? 1 : 0,
+                    transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
+                  }}>
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
+                    <Card className='card2' bordered hoverable>
+                      <p className='content'>{item.name}</p>
+                    </Card>
+                  </motion.div>
                 </SwiperSlide>
               ))
             }
@@ -141,7 +170,12 @@ const App: React.FC = () => {
           >
             {
               componyList.map(item => (
-                <SwiperSlide>
+                <SwiperSlide
+                style={{
+                  transform: props.pageNumber==4 ? "none" : `translateY(-100px)`,
+                  opacity: props.pageNumber==4 ? 1 : 0,
+                  transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
+                }}>
                   <Card className='card2' bordered hoverable>
                     <p className='content'>{item.name}</p>
                   </Card>
