@@ -17,10 +17,10 @@ import next from './assets/next.png'
 import { SwiperEvents } from 'swiper/types';
 //滑动和分页器和字体
 const App: FC = () => {
-  const [activeIndex,setActiveIndex]=useState('0')
+  const [activeIndex,setActiveIndex]=useState<number>(0)
  
-  const [swiperController,setSwiperController]=useState()
-  const pageChange=(page)=>{
+  const [swiperController,setSwiperController]=useState<any>()
+  const pageChange=(page:any)=>{
    swiperController.slideTo(page,1000,false)
   }
   const isShowButton=()=>{
@@ -41,11 +41,11 @@ const App: FC = () => {
       modules={[Pagination,Mousewheel]}
       className="allSwiper"
       mousewheel={true}
-      onSlideChange={(e:SwiperEvents) =>{setActiveIndex(e.activeIndex)}}
+      onSlideChange={(e:any) =>{setActiveIndex(e.activeIndex)}}
       onSwiper={(swiper) => {setSwiperController(swiper)}}
     >
       <SwiperSlide>
-        <First changePage={pageChange} activeIndex={activeIndex}/>
+        <First changePage={pageChange} activeIndex={activeIndex} pageNumber={activeIndex}/>
       </SwiperSlide>
       <SwiperSlide>
         <Second last={last} next={next} pageNumber={activeIndex}/>

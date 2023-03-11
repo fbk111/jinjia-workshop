@@ -4,6 +4,7 @@
   background-color: rgba(137, 157, 192, 0.1);
 }
 .thirdContent .thirdIn {
+  height: 100%;
   width: 90%;
   margin: 0 auto;
 }
@@ -296,8 +297,8 @@
   .thirdContent .thirdIn .thirdSwiper1 {
     --swiper-pagination-color: #bb021a;
     position: relative;
-    height: 650px;
-    margin-top: 50px;
+    height: 81%;
+    margin-top: 10px;
   }
   .thirdContent .thirdIn .thirdSwiper1 .swiper-button-prev,
   .thirdContent .thirdIn .thirdSwiper1 .swiper-button-next {
@@ -333,8 +334,8 @@
   }
   .thirdContent .thirdIn .thirdSwiper1 .contentAll {
     width: 100%;
-    height: 400px;
-    margin-top: 50px;
+    height: 70%;
+    margin-top: 20px;
   }
   .thirdContent .thirdIn .thirdSwiper1 .contentAll .title {
     text-align: center;
@@ -354,7 +355,7 @@
   .thirdContent .thirdIn .thirdSwiper1 .contentAll .buttonList .button {
     background-color: #bb021a;
     color: white;
-    width: 110px;
+    width: 30%;
     height: 42px;
   }
 }

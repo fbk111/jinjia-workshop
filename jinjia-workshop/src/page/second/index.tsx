@@ -7,14 +7,14 @@ import 'swiper/swiper-bundle.css';
 import './index.less'
 import { indexSecond } from '../../request/all.js'
 const { Title, Text } = Typography;
-const App: React.FC = (props) => {
+const App: React.FC<any> = (props:any) => {
   const [imgList, setImgList] = useState([])
   const [certificateList, setCertificateList] = useState([])
   const [secondmove, setSecondMove] = useState(false)
   let loading = () => imgList.length == 0 ? true : false
   //相当于componentDidMount
   useEffect(() => {
-    indexSecond().then(res => {
+    indexSecond().then((res:any) => {
       setImgList(res.studentAward)
       setCertificateList(res.certificateList)
     })
@@ -77,7 +77,7 @@ const App: React.FC = (props) => {
           style={{ display: imgList.length == 0 ? 'none' : 'block' }}
         >
           {
-            imgList.map((item, index) => (
+            imgList.map((item:any, index) => (
               <SwiperSlide
                 style={{
                   transform: props.pageNumber == 1 ? "none" : `translateX(${500 - index * 100}px)`,
@@ -139,6 +139,10 @@ const App: React.FC = (props) => {
             slidesPerView: 4,
             spaceBetween: 30,
           },
+          1200: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
           1400: {
             slidesPerView: 6,
             spaceBetween: 30,
@@ -149,14 +153,14 @@ const App: React.FC = (props) => {
           stopOnLastSlide: true,
           disableOnInteraction: true,
         }}
-        Navigation={true}
+        navigation={false}
         modules={[Navigation, Autoplay]}
         className='mySwiperSecond2'
         style={{ height: '180px' }}
 
       >
         {
-          certificateList.map((item,index) => (
+          certificateList.map((item:any,index) => (
             <SwiperSlide
               key={item.index}
               style={{

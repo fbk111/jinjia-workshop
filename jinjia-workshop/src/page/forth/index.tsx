@@ -6,10 +6,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from "swiper";
 import 'swiper/swiper-bundle.css';
 import { indexForth } from '../../request/all.js'
-export default function index(props: object) {
+export default function index(props: any) {
   const [teacherList, setTeacherList] = useState([])
   useEffect(() => {
-    indexForth().then(res => {
+    indexForth().then((res:any) => {
       setTeacherList(res)
     })
   }, [])
@@ -71,7 +71,7 @@ export default function index(props: object) {
 
             >
               {
-                teacherList.map((item,index) => (
+                teacherList.map((item:any,index) => (
                   <SwiperSlide key={item.index}
                   style={{
                     transform: props.pageNumber==3 ? "none" : "translateX(-500px)",

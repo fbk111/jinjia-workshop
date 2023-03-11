@@ -9,16 +9,17 @@ import './index.less'
 import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/pagination";
-const App: React.FC = (props:Object) => {
+const App: React.FC<any> = (props:any) => {
   const [componyList, setComponyList] = useState([])
   const [schoolList, setSchoolList] = useState([])
   useEffect(() => {
-    indexFifth().then(res => {
+    indexFifth().then((res:any)=> {
       setComponyList(res.componyList)
       setSchoolList(res.schoolList)
 
     })
   }, [])
+ 
   let loadingCompony = () => componyList.length == 0 ? true : false
   let loadingSchool = () => schoolList.length == 0 ? true : false
   return <div className='fifthContent'>
@@ -65,7 +66,7 @@ const App: React.FC = (props:Object) => {
             >
               {
 
-                schoolList.map((item, index) => (
+                schoolList.map((item:any, index) => (
 
                   <SwiperSlide
                     style={{
@@ -124,7 +125,7 @@ const App: React.FC = (props:Object) => {
             className="swiperForth2"
           >
             {
-              componyList.map((item, index) => (
+              componyList.map((item:any, index) => (
                 <SwiperSlide
                   style={{
                     transform: props.pageNumber==4 ? "none" : `translateY(100px)`,
@@ -169,7 +170,7 @@ const App: React.FC = (props:Object) => {
             className="swiperForth2"
           >
             {
-              componyList.map(item => (
+              componyList.map((item:any) => (
                 <SwiperSlide
                 style={{
                   transform: props.pageNumber==4 ? "none" : `translateY(-100px)`,

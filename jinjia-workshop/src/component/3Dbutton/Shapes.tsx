@@ -5,7 +5,7 @@ import { transition } from "./settings";
 import { Canvas, useThree } from "@react-three/fiber";
 import { useSmoothTransform } from "./use-smooth-transform";
 
-export function Shapes({ isHover, isPress, mouseX, mouseY }) {
+export function Shapes({ isHover, isPress, mouseX, mouseY }:(any)) {
   const lightRotateX = useSmoothTransform(mouseY, spring, mouseToLightRotation);
   const lightRotateY = useSmoothTransform(mouseX, spring, mouseToLightRotation);
 
@@ -122,18 +122,18 @@ export function Material() {
   return <meshPhongMaterial color="#fff" specular="#61dafb" shininess={10} />;
 }
 
-function Camera({ mouseX, mouseY, ...props }) {
-  const cameraX = useSmoothTransform(mouseX, spring, (x) => x / 350);
-  const cameraY = useSmoothTransform(mouseY, spring, (y) => (-1 * y) / 350);
+function Camera({ mouseX, mouseY, ...props }:(any)) {
+  const cameraX = useSmoothTransform(mouseX, spring, (x:any) => x / 350);
+  const cameraY = useSmoothTransform(mouseY, spring, (y:any) => (-1 * y) / 350);
 
   const set = useThree(({ set }) => set);
   const camera = useThree(({ camera }) => camera);
   const size = useThree(({ size }) => size);
   const scene = useThree(({ scene }) => scene);
-  const cameraRef = useRef();
+  const cameraRef = useRef<any>();
 
   useLayoutEffect(() => {
-    const { current: cam } = cameraRef;
+    const { current:cam } = cameraRef;
     if (cam) {
       cam.aspect = size.width / size.height;
       cam.updateProjectionMatrix();
@@ -163,4 +163,4 @@ function Camera({ mouseX, mouseY, ...props }) {
 
 const spring = { stiffness: 600, damping: 30 };
 
-const mouseToLightRotation = (v) => (-1 * v) / 140;
+const mouseToLightRotation = (v:any) => (-1 * v) / 140;

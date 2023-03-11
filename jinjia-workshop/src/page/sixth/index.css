@@ -4,6 +4,7 @@
   background-image: url(../../assets/sixth/background.png);
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: 100% 100%;
 }
 .sixContent .sixIn {
   width: 90%;
@@ -22,6 +23,7 @@
   background-image: url(../../assets/sixth/background.png);
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: 100% 100%;
   .sixIn {
     width: 90%;
     margin: 0 auto;
@@ -33,6 +35,7 @@
   background-image: url(../../assets/sixth/background.png);
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: 100% 100%;
   .sixIn {
     width: 90%;
     margin: 0 auto;

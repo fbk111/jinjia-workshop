@@ -208,12 +208,17 @@
   }
   .forthContent .forthIn {
     width: 90%;
+    height: 100%;
     margin: 0 auto;
   }
-  .forthContent .forthIn .forthSwiper {
-    margin-top: 36px;
+  .forthContent .forthIn .teacherList {
     width: 100%;
-    height: 700px;
+    height: 80%;
+  }
+  .forthContent .forthIn .forthSwiper {
+    margin-top: 10px;
+    width: 80%;
+    height: 90%;
     --swiper-pagination-color: #bb021a;
   }
   .forthContent .forthIn .forthSwiper .swiper-button-prev,

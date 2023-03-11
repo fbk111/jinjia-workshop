@@ -4,7 +4,7 @@ import { Typography } from 'antd'
 import { useInView } from "framer-motion";
 const { Title, Text } = Typography
 
-export default function index(props: object) {
+export default function index(props: any) {
   const refSix = useRef(null)
   const showSix = useInView(refSix);
   return (

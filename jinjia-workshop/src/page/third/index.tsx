@@ -19,10 +19,10 @@ interface img {
   button1: string,
   button2: string
 }
-export default function App(props: object) {
+export default function App(props: any) {
   const [imgList, setImgList] = useState([])
   useEffect(() => {
-    indexThird().then(res => {
+    indexThird().then((res:any) => {
       setImgList(res)
     })
   }, [])
@@ -40,7 +40,7 @@ export default function App(props: object) {
           <p className='header1'>项目作品</p>
           <p className='header2'>Project works</p>
         </div>
-        <Skeleton paragraph={{ rows: 20 }} style={{ width: '90%', margin: '0 auto' }} loading={loading()} active round width>
+        <Skeleton paragraph={{ rows: 20 }} style={{ width: '90%', margin: '0 auto' }} loading={loading()} active round>
           <Swiper
             spaceBetween={30}
             pagination={{
@@ -56,7 +56,7 @@ export default function App(props: object) {
             className='thirdSwiper1'
           >
             {
-              imgList.map(item => (
+              imgList.map((item:any) => (
                 <SwiperSlide
                 style={{
                   opacity: props.pageNumber==2 ? 1 : 0,

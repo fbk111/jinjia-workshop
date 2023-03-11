@@ -45,9 +45,9 @@ const items: MenuProps['items'] = [
 
 ];
 const { Text } = Typography;
-const App: React.FC = (props) => {
+const App: React.FC<any> = (props: any) => {
   const [current, setCurrent] = useState('0')
-  const onClick: MenuProps['onClick'] = (e: MouseEvent) => {
+  const onClick = (e: any) => {
     props.changePage(e.key)
     setCurrent(e.key);
   };
@@ -60,20 +60,30 @@ const App: React.FC = (props) => {
     justifyContent: 'center'
   }
   return <div className='firstContent'>
-      <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} style={demo} />
-      <div className='firstIn'>
+    <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} style={demo} />
+    <div className='firstIn'>
       <Row className='firstRow' align="middle" justify="center">
         <Col span={1}></Col>
-        <Col className='firstCol1' lg={{ span: 9 }} xs={{ span: 24 }}  >
+        <Col className='firstCol1' lg={{ span: 9 }} xs={{ span: 24 }}
+          style={{
+            transform: props.pageNumber == 0 ? "none" : "translateX(-200px)",
+            opacity: props.pageNumber == 0 ? 1 : 0,
+            transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
+          }} >
           <img className='imgOne' src={titleImg}></img>
           <p className='text'>以立德树人为根本任务，以提高技术技能水平为目标，以技能竞赛和横向
             项目为主要抓手，以具体工作任务为驱动，着重培养学员团队协作意识和
             精益求精的工匠精神。
           </p>
-          <DemoButton/>
+          <DemoButton />
         </Col>
         <Col span={1}></Col>
-        <Col className='secondCol2' lg={{ span: 11 }} xs={{ span: 24 }}>
+        <Col className='secondCol2' lg={{ span: 11 }} xs={{ span: 24 }}
+          style={{
+            transform: props.pageNumber == 0 ? "none" : "translateX(200px)",
+            opacity: props.pageNumber == 0 ? 1 : 0,
+            transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
+          }} >
           <img className='imgTwo' src={right}></img>
         </Col>
         <Col span={2}></Col>
