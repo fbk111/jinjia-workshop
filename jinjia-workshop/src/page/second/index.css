@@ -60,6 +60,9 @@
   width: 92px;
   height: 32px;
   font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .secondIn .mySwiperSecond .secondCard .award {
   width: 90%;

@@ -7,14 +7,14 @@ import 'swiper/swiper-bundle.css';
 import './index.less'
 import { indexSecond } from '../../request/all.js'
 const { Title, Text } = Typography;
-const App: React.FC<any> = (props:any) => {
+const App: React.FC<any> = (props: any) => {
   const [imgList, setImgList] = useState([])
   const [certificateList, setCertificateList] = useState([])
   const [secondmove, setSecondMove] = useState(false)
   let loading = () => imgList.length == 0 ? true : false
   //相当于componentDidMount
   useEffect(() => {
-    indexSecond().then((res:any) => {
+    indexSecond().then((res: any) => {
       setImgList(res.studentAward)
       setCertificateList(res.certificateList)
     })
@@ -77,7 +77,7 @@ const App: React.FC<any> = (props:any) => {
           style={{ display: imgList.length == 0 ? 'none' : 'block' }}
         >
           {
-            imgList.map((item:any, index) => (
+            imgList.map((item: any, index) => (
               <SwiperSlide
                 style={{
                   transform: props.pageNumber == 1 ? "none" : `translateX(${500 - index * 100}px)`,
@@ -99,7 +99,7 @@ const App: React.FC<any> = (props:any) => {
                       {item.p}
                     </p>
 
-                    <Button onClick={() => setSecondMove(!secondmove)} className='button' type="primary" style={{ display: 'block', margin: '0 auto', marginTop: '10px', backgroundColor: '#bb021a' }} danger>{item.button}</Button>
+                    <Button onClick={() => setSecondMove(!secondmove)} className='button' type="primary" style={{ margin: '0 auto', backgroundColor: '#bb021a' }} danger>{item.button}</Button>
                   </motion.div>
 
                 </Card>
@@ -160,7 +160,7 @@ const App: React.FC<any> = (props:any) => {
 
       >
         {
-          certificateList.map((item:any,index) => (
+          certificateList.map((item: any, index) => (
             <SwiperSlide
               key={item.index}
               style={{
@@ -185,7 +185,7 @@ const App: React.FC<any> = (props:any) => {
     </div>
 
 
-  </div>
+  </div >
 
 };
 

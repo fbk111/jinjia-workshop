@@ -83,7 +83,7 @@ const App: React.FC<any> = (props: any) => {
   const demo = {
     width: '100%',
     display: 'flex',
-    alignItem:'center',
+    alignItem: 'center',
     justifyContent: 'center',
     height: '60px'
   }
