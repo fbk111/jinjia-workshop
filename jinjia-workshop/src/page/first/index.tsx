@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { AppstoreOutlined, NodeIndexOutlined, UserOutlined, MobileOutlined, RocketOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Menu, Row, Col, Button, Typography, Divider } from 'antd';
@@ -7,6 +7,9 @@ import right from '../../assets/first/right.png'
 import './index.less'
 import icon from '../../assets/first/icon.png'
 import DemoButton from '../../component/3Dbutton/App.jsx'
+import Lottie from 'lottie-web'
+import animationData from '../../assets/first/lottie.json'
+
 // 2022-1-9基本完成，还需字体，分页器，axios，100vh
 const items: MenuProps['items'] = [
   {
@@ -45,6 +48,8 @@ const items: MenuProps['items'] = [
 
 ];
 const { Text } = Typography;
+
+
 const App: React.FC<any> = (props: any) => {
   const [current, setCurrent] = useState('0')
   const onClick = (e: any) => {
@@ -52,12 +57,35 @@ const App: React.FC<any> = (props: any) => {
     setCurrent(e.key);
   };
   useEffect(() => {
-    setCurrent(props.activeIndex)
+    if (props.activeIndex !== undefined) {
+      setCurrent(props.activeIndex);
+    }
+
   }, [props.activeIndex])
+
+  const lottieRef = useRef<HTMLDivElement>(null);
+  // lottie动画
+  useEffect(() => {
+    const animation = Lottie.loadAnimation({
+      container: lottieRef.current!,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: animationData,
+    });
+
+    return () => {
+      animation.destroy();
+    };
+  }, []);
+
+
   const demo = {
     width: '100%',
     display: 'flex',
-    justifyContent: 'center'
+    alignItem:'center',
+    justifyContent: 'center',
+    height: '60px'
   }
   return <div className='firstContent'>
     <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} style={demo} />
@@ -84,7 +112,9 @@ const App: React.FC<any> = (props: any) => {
             opacity: props.pageNumber == 0 ? 1 : 0,
             transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
           }} >
-          <img className='imgTwo' src={right}></img>
+          {/* <img className='imgTwo' src={right}></img> */}
+          {/* 这里挂在Lottie动画 */}
+          <div ref={lottieRef}></div>
         </Col>
         <Col span={2}></Col>
       </Row>
