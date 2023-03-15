@@ -144,7 +144,15 @@ const App: React.FC<any> = (props: any) => {
             spaceBetween: 30,
           },
           1400: {
-            slidesPerView: 6,
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
+          1600: {
+            slidesPerView: 5,
+            spaceBetween: 30,
+          },
+          1800: {
+            slidesPerView: 5,
             spaceBetween: 30,
           },
         }}
@@ -156,7 +164,6 @@ const App: React.FC<any> = (props: any) => {
         navigation={false}
         modules={[Navigation, Autoplay]}
         className='mySwiperSecond2'
-        style={{ height: '180px' }}
 
       >
         {
@@ -164,17 +171,17 @@ const App: React.FC<any> = (props: any) => {
             <SwiperSlide
               key={item.index}
               style={{
-                display: 'flex', justifyContent: 'center',
                 transform: props.pageNumber == 1 ? "none" : `translateX(${-(500 - index * 100)}px)`,
                 opacity: props.pageNumber == 1 ? 1 : 0,
                 transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
               }}>
-              <Card bordered hoverable>
+              <Card bordered hoverable >
                 <motion.div
+               
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  <img src={item.img} />
+                  <img src={item.img} style={{width:'100%'}}/>
                 </motion.div>
               </Card>
 

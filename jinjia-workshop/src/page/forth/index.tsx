@@ -85,7 +85,7 @@ export default function index(props: any) {
                       <Card
                         bordered
                         hoverable
-                        style={{ width: '100%' }}
+                        style={{ width: '90%' }}
                         cover={<img src={item.img} className='img' />}
                       >
                         <Button style={{ display: 'block', margin: '0 auto', backgroundColor: '#bb021a' }} type="primary" danger>{item.name}</Button>
