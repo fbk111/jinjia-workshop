@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { AppstoreOutlined, NodeIndexOutlined, UserOutlined, MobileOutlined, RocketOutlined } from '@ant-design/icons';
+import { NodeIndexOutlined, UserOutlined, CodeOutlined, TrophyOutlined, FlagOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Menu, Row, Col, Button, Typography, Divider } from 'antd';
+import { Menu, Row, Col, Button, Typography } from 'antd';
 import titleImg from '../../assets/first/title.png'
-import right from '../../assets/first/right.png'
 import './index.less'
 import icon from '../../assets/first/icon.png'
 import DemoButton from '../../component/3Dbutton/App.jsx'
@@ -13,33 +12,33 @@ import animationData from '../../assets/first/lottie.json'
 // 2022-1-9基本完成，还需字体，分页器，axios，100vh
 const items: MenuProps['items'] = [
   {
-    label: <img style={{ width: '100px', height: '30px' }} src={icon} />,
+    label: <img style={{ width: '100px', height: 'auto' }} src={icon} />,
     key: 6
   },
   {
     label: '首页',
     key: '0',
-    icon: <NodeIndexOutlined />,
+    icon: <NodeIndexOutlined style={{ fontSize: '20px' }} />,
   },
   {
     label: '荣誉获奖',
     key: '1',
-    icon: <AppstoreOutlined />
+    icon: <TrophyOutlined style={{ fontSize: '20px' }} />
   },
   {
     label: '项目作品',
     key: '2',
-    icon: <MobileOutlined />,
+    icon: <CodeOutlined style={{ fontSize: '20px' }} />,
   },
   {
     label: '师生风采',
     key: '3',
-    icon: <RocketOutlined />,
+    icon: <FlagOutlined style={{ fontSize: '20px' }} />,
   },
   {
     label: '校企合作',
     key: '4',
-    icon: <UserOutlined />,
+    icon: <UserOutlined style={{ fontSize: '20px' }} />,
   },
   {
     label: <Button style={{ backgroundColor: '#bb021a' }} type="primary" danger>联系我们</Button>,
@@ -85,7 +84,8 @@ const App: React.FC<any> = (props: any) => {
     display: 'flex',
     alignItem: 'center',
     justifyContent: 'center',
-    height: '60px'
+    height: '60px',
+    fontSize: '20px'
   }
   return <div className='firstContent'>
     <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} style={demo} />
@@ -103,7 +103,10 @@ const App: React.FC<any> = (props: any) => {
             项目为主要抓手，以具体工作任务为驱动，着重培养学员团队协作意识和
             精益求精的工匠精神。
           </p>
-          <DemoButton />
+          <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+            <DemoButton />
+          </div>
+
         </Col>
         <Col span={1}></Col>
         <Col className='secondCol2' lg={{ span: 11 }} xs={{ span: 24 }}

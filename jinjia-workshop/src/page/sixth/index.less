@@ -5,19 +5,23 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 100% 100%;
+
   // background-size: ;
   .sixIn {
     width: 90%;
     margin: 0 auto;
+
     .header1 {
       color: white;
     }
+
     .header2 {
       opacity: 0.8;
       text-shadow: 1px 1px 2px black;
     }
   }
 }
+
 @media screen and (max-width: 900px) {
   width: 100%;
   height: 100%;
@@ -25,20 +29,146 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 100% 100%;
+
   .sixIn {
     width: 90%;
     margin: 0 auto;
   }
 }
+
 @media screen and (max-width: 576px) {
-  width: 100%;
-  height: 100%;
-  background-image: url(../../assets/sixth/background.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 100% 100%;
-  .sixIn {
+  .sixMobile {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #fbda61, #ff5acd);
+
+  }
+
+  .sixMobileIn {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sixCard {
+    position: relative;
     width: 90%;
-    margin: 0 auto;
+    height: auto;
+    /* height: 450px; */
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+    transition: 0.5s;
+  }
+
+  .sixCard:hover {
+    height: 450px;
+  }
+
+  .sixImgBx {
+    position: absolute;
+    left: 50%;
+    top: -50px;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    transition: 0.5s;
+  }
+
+  .sixCard:hover .sixImgBx {
+    width: 150px;
+    height: 150px;
+  }
+
+  .sixImgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .sixCard .sixContentMobile {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  .sixCard .sixContentMobile .details {
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    transition: 0.5s;
+    transform: translateY(150px);
+  }
+
+  .sixCard:hover .sixContentMobile .details {
+    transform: translateY(0px);
+  }
+
+  .sixCard .sixContentMobile .details h2 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #555;
+    line-height: 1.2em;
+  }
+
+  .sixCard .sixContentMobile .details h2 span {
+    font-size: 20px;
+    font-weight: 500;
+    opacity: 0.5;
+  }
+
+  .sixCard .sixContentMobile .details .data {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+
+  .sixCard .sixContentMobile .details .data h3 {
+    font-size: 30px;
+    color: #555;
+    line-height: 1.2em;
+    font-weight: 600;
+  }
+
+  .sixCard .sixContentMobile .details .data h3 span {
+    font-size: 20px;
+    font-weight: 400;
+    opacity: 0.5;
+  }
+
+  .sixCard .sixContentMobile .details .actionBtn {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .sixCard .sixContentMobile .details .actionBtn .sixMobileButton {
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 30px;
+    font-weight: 500;
+    background: #ff5f95;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .sixCard .sixContentMobile .details .actionBtn .sixMobileButton:nth-child(2) {
+    border: 1px solid #999;
+    color: #999;
+    background: #fff;
   }
 }

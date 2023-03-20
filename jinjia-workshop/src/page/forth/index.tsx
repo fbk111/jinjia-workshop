@@ -1,26 +1,74 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import './index.less'
-import {  motion } from "framer-motion";
-import { Card, Button, Divider, Skeleton } from 'antd';
+import { motion } from "framer-motion";
+import { Card, Button, Skeleton } from 'antd';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from "swiper";
 import 'swiper/swiper-bundle.css';
-import { indexForth } from '../../request/all.js'
+import forth1 from '../../assets/forth/01.png'
+import forth2 from '../../assets/forth/02.png'
+import forth3 from '../../assets/forth/03.png'
+import forth4 from '../../assets/forth/04.png'
+import forth5 from '../../assets/forth/05.png'
+import forth6 from '../../assets/forth/06.png'
+import forth7 from '../../assets/forth/07.png'
 export default function index(props: any) {
-  const [teacherList, setTeacherList] = useState([])
+  const [teacherList, setTeacherList] = useState<Array<object>>([])
   useEffect(() => {
-    indexForth().then((res:any) => {
-      setTeacherList(res)
-    })
+    setTeacherList(forthList)
   }, [])
+  const forthList = [
+    {
+      "index": 41,
+      "img": forth1,
+      "name": "祝文飞",
+      "description": "天津市五一劳动奖章获得者。多年企业一线软件开发经验，专业方向：移动应用开发。指导学生多次获得国家级竞赛奖项。"
+    },
+    {
+      "index": 42,
+      "img": forth2,
+      "name": "王宝帅",
+      "description": "天津市五一劳动奖章获得者。多年企业一线软件开发经验，专业方向：移动应用开发。指导学生多次获得国家级竞赛奖项。"
+    },
+    {
+      "index": 43,
+      "img": forth3,
+      "name": "刘洋",
+      "description": "天津市五一劳动奖章获得者。多年企业一线软件开发经验，专业方向：移动应用开发。指导学生多次获得国家级竞赛奖项。"
+    },
+    {
+      "index": 44,
+      "img": forth4,
+      "name": "刘宇",
+      "description": "天津市五一劳动奖章获得者。多年企业一线软件开发经验，专业方向：移动应用开发。指导学生多次获得国家级竞赛奖项。"
+    },
+    {
+      "index": 45,
+      "img": forth5,
+      "name": "吴涛",
+      "description": "天津市五一劳动奖章获得者。多年企业一线软件开发经验，专业方向：移动应用开发。指导学生多次获得国家级竞赛奖项。"
+    },
+    {
+      "index": 46,
+      "img": forth6,
+      "name": "刘景鸿",
+      "description": "天津市五一劳动奖章获得者。多年企业一线软件开发经验，专业方向：移动应用开发。指导学生多次获得国家级竞赛奖项。"
+    },
+    {
+      "index": 47,
+      "img": forth7,
+      "name": "刘宇",
+      "description": "天津市五一劳动奖章获得者。多年企业一线软件开发经验，专业方向：移动应用开发。指导学生多次获得国家级竞赛奖项。"
+    }
+  ]
   let loading = () => teacherList.length == 0 ? true : false
   return (
     <div className='forthContent'>
       <div className='forthIn'>
         <div className='header'
           style={{
-            transform: props.pageNumber==3 ? "none" : "translateX(500px)",
-            opacity: props.pageNumber==3 ? 1 : 0,
+            transform: props.pageNumber == 3 ? "none" : "translateX(500px)",
+            opacity: props.pageNumber == 3 ? 1 : 0,
             transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
           }}>
           <p className='header1'>师生风采</p>
@@ -71,13 +119,13 @@ export default function index(props: any) {
 
             >
               {
-                teacherList.map((item:any,index) => (
+                teacherList.map((item: any, index) => (
                   <SwiperSlide key={item.index}
-                  style={{
-                    transform: props.pageNumber==3 ? "none" : "translateX(-500px)",
-                    opacity: props.pageNumber==3 ? 1 : 0,
-                    transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
-                  }}>
+                    style={{
+                      transform: props.pageNumber == 3 ? "none" : "translateX(-500px)",
+                      opacity: props.pageNumber == 3 ? 1 : 0,
+                      transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
+                    }}>
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       transition={{ type: "spring", stiffness: 400, damping: 10 }}
