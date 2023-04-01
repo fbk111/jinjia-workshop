@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
-import { Card, Button, Skeleton } from 'antd';
+import { Card, Button, Skeleton, List } from 'antd';
 import { Swiper, SwiperSlide, } from 'swiper/react';
-import { Pagination, Navigation, Autoplay } from "swiper";
+import { Pagination, Navigation, Autoplay, Scrollbar } from "swiper";
 import 'swiper/swiper-bundle.css';
 import './index.less'
-import json from '../../assets/imgLiost.json'
 import hornor1 from '../../assets/seconds/hornor1.png'
 import hornor2 from '../../assets/seconds/hornor2.png'
 import hornor3 from '../../assets/seconds/hornor3.png'
@@ -66,7 +65,7 @@ const App: React.FC<any> = (props: any) => {
     },
     {
       "index": 223,
-      "img": certificate3
+      "img": certificate6
     },
     {
       "index": 224,
@@ -78,7 +77,7 @@ const App: React.FC<any> = (props: any) => {
     },
     {
       "index": 226,
-      "img": certificate6
+      "img": certificate3
     },
     {
       "index": 227,
@@ -99,7 +98,6 @@ const App: React.FC<any> = (props: any) => {
       </div>
       <Skeleton paragraph={{ rows: 20 }} loading={loading()} active round>
         <Swiper
-
           slidesPerView={3}
           spaceBetween={40}
           breakpoints={{
@@ -181,46 +179,8 @@ const App: React.FC<any> = (props: any) => {
 
       </Skeleton>
       <Swiper
-        slidesPerView={6}
+        slidesPerView={'auto'}
         spaceBetween={30}
-        breakpoints={{
-          0: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-          },
-          375: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-          },
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-          },
-          1024: {
-            slidesPerView: 4,
-            spaceBetween: 30,
-          },
-          1200: {
-            slidesPerView: 4,
-            spaceBetween: 30,
-          },
-          1400: {
-            slidesPerView: 4,
-            spaceBetween: 30,
-          },
-          1600: {
-            slidesPerView: 5,
-            spaceBetween: 30,
-          },
-          1800: {
-            slidesPerView: 5,
-            spaceBetween: 30,
-          },
-        }}
         autoplay={{
           delay: 2500,
           stopOnLastSlide: true,
@@ -236,24 +196,60 @@ const App: React.FC<any> = (props: any) => {
             <SwiperSlide
               key={item.index}
               style={{
+                width: '15vh',
                 transform: props.pageNumber == 1 ? "none" : `translateX(${-(500 - index * 100)}px)`,
                 opacity: props.pageNumber == 1 ? 1 : 0,
                 transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
               }}>
-              <Card bordered hoverable>
-                <motion.div
-
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  <img src={item.img} style={{ width: '100%' }} />
-                </motion.div>
-              </Card>
+              <motion.div
+                style={{
+                  width: '100%', height: '100%', display: 'flex',
+                  alignItems: 'center',
+                }}
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                <img src={item.img} style={{ width: '100%' }} />
+              </motion.div>
 
             </SwiperSlide>
           ))
         }
       </Swiper>
+
+      {/* <List
+        split={false}
+        itemLayout={'horizontal'}
+        style={{
+          width: '100%',
+          height: '20vh',
+          marginTop: '30px',
+        }}
+
+      >
+        {
+          certificateList.map((item: any, index) => (
+            <List.Item
+              style={{
+                marginLeft: '10px',
+                marginRight: '10px',
+                display: 'inline-block',
+              }}
+            >
+              <motion.div
+                style={{
+                  alignItems: 'center',
+                }}
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                <img src={item.img} style={{ height: '20vh' }} />
+              </motion.div>
+
+            </List.Item>
+          ))
+        }
+      </List> */}
     </div>
 
 

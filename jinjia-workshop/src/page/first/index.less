@@ -37,27 +37,35 @@
 
 
 
-.ant-menu-item-active:hover {
-  border: 0px !important;
+// .ant-menu,
+// .ant-menu-sub,
+// .ant-menu-inline {
+//   color: white;
+//   // background-color: #044d50 !important;
+// }
+
+
+.ant-menu-item-selected {
+  background-color: #fff !important;
   color: #bb021a !important;
 }
 
-.ant-menu-item-active:before {
-  border: 0px !important;
+.ant-menu-item-selected::after {
+  border-bottom: #bb021a 2px solid !important;
+}
+
+// .ant-menu-item:hover .ant-menu-title-content {
+//   color: #bb021a !important;
+// }
+.ant-menu-horizontal {
+  display: flex;
+  align-items: center;
+}
+
+.ant-menu-item:hover::after {
   color: #bb021a !important;
+  border-bottom: #bb021a 2px solid !important;
 }
-
-.ant-menu-item-active:after {
-  border: 0px !important;
-  color: #bb021a !important;
-}
-
-.ant-menu-item::after {
-  border: 0px;
-}
-
-
-
 
 @media screen and (max-width: 1400px) {
   .firstContent {
